@@ -23,7 +23,9 @@ html {
   height: 100vh;
   scroll-behavior: smooth;
   -webkit-font-smoothing : subpixel-antialiased;
-  -moz-osx-font-smoothing : auto;}
+  -moz-osx-font-smoothing : auto;
+  
+}
 
   body {
     margin: 0;
@@ -33,25 +35,16 @@ html {
     font-family: poppins;
     font-weight: 400;
     background: #161616;
+    cursor: none;
   }
 
-  .aboutme {
-    font-family: monument;
-    font-weight: 300;
-    color: transparent;
-    background-color: transparent;
-    -webkit-text-stroke: 0.7px white;
-    font-size: 90px;
-    text-transform: uppercase;
-    pointer-events: none;
-    mix-blend-mode: difference;
-  }
+
 
 
   nav {
     padding: 8px;
     font-style: italic;
-    z-index: 9999;
+    z-index: 1;
     position: relative;
   }
 
@@ -171,7 +164,7 @@ html {
       width: 48px;
       height: 48px;
       cursor: pointer;
-      z-index: 9999;
+      z-index: 1;
       border-radius: 50%;
     }
 
@@ -220,7 +213,7 @@ html {
   }
 
   #nav:checked ~ .nav-wrapper {
-    z-index: 9990;
+    z-index: 1;
     opacity: 1;
   }
 
@@ -237,12 +230,10 @@ html {
 
 
 
-
   .containerL {
     font-family: "VT323", monospace;
     padding: 100px 10px;
-
-    
+    z-index: 0;
   }
 
   .bold {
@@ -261,10 +252,8 @@ html {
     margin: 0 auto;
     box-shadow: 5px 5px 19px #000;
     padding: 10px;
+    z-index: -1;
 
-
-    
-    
   }
 
   .link{
@@ -366,94 +355,49 @@ html {
     margin: 10px 0;
   }
 
-  .receipt:after {
-    animation: grain 8s steps(10) infinite;
-    background-image: url("../images/noise.png");
-    content: "";
-    height: 300%;
-    left: -50%;
-    opacity: 0.3;
-    position: fixed;
-    top: -100%;
-    width: 300%;
-  }
-
-  @keyframes grain {
-    0%, 100% { transform:translate(0, 0) }
-    10% { transform:translate(-5%, -10%) }
-    20% { transform:translate(-15%, 5%) }
-    30% { transform:translate(7%, -25%) }
-    40% { transform:translate(-5%, 25%) }
-    50% { transform:translate(-15%, 10%) }
-    60% { transform:translate(15%, 0%) }
-    70% { transform:translate(0%, 15%) }
-    80% { transform:translate(3%, 35%) }
-    90% { transform:translate(-10%, 10%) }
-  }
-
-  a:not(.scroll){
-    position: relative;
-    z-index: 9999;
-  }
 
 
-
-  .backdrop{
-    position: relative;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-  }
-  .backdrop {
-    background-image: url("../images/backdrop.jpg");
-    min-height: 100%;
+  .cursor {
+    position: absolute;
+    background: white;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
     z-index: 1;
-
+    transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+        0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0.8);
+    
   }
-
-
-  .me {
-    max-height: 60%;
-    max-width: 60%;
+  
+  .cursor.active {
+    opacity: 1;
+    transform: scale(1);
+    background: black;
+  }
+  
+  .cursor.active::before {
+    opacity: 1;
+  }
+  
+  .cursor-follower {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+        0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(4px, 4px);
   }
-
-
-  .caption {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    color: #000;
-
-
+  
+  .cursor-follower.active {
+    opacity: 0.3;
+    transform: scale(1);
+    background: rgba(0, 0, 0);
   }
-
-
-  #mouse-scroll {
-    style: block;
-
-  }
-  #mouse-scroll {
-    position: absolute;
-    margin: auto;
-    left: 50%;
-    bottom: 50px;
-
-
-  }
-
-  @media screen and (max-width: 640px) {
-    #mouse-scroll {
-      font-size: 25px;
-    }
-  }
-

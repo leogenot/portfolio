@@ -12,25 +12,17 @@
       <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128|VT323" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+      <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- TweenMax - GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
 
 </head>
 <body>
-
-
-      <div class="backdrop">
-            <img class="me" src="../images/me.jpg" />
-            <div class="caption">
-                  <h1 class="aboutme">ABOUT ME</h1>
-            </div>
-            
-            <a class="scroll" href="#hello">
-                  <div id="mouse-scroll">
-                    <i class="fas fa-caret-down" style="font-size:45px; color: white;"></i>
-              </div>
-        </a>
-
-  </div>
-
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
 
 
   <div class="wrapper" id="hello">
@@ -42,16 +34,16 @@
                   <i></i>
             </label>
             <div class="logo">
-                  <a href="../index.html">LEO GENOT</a>
+                  <a href="../index.html">Leo Genot</a>
             </div>
             <div class="nav-wrapper">
                   <ul>
                         <li><a download href="CV.pdf" target="_blank" style="border-bottom:1px solid white;
                         padding-bottom:2px;">
-                        Download my resume
+                        Download my Resume
                   </a></li>
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="../work/work.html">My work</a></li>
+                  <li><a download href="PortfolioGenot.pdf" target="_blank">Download my Portfolio</a></li>
+                  <li><a href="../mainmenu/index.html">My work</a></li>
                   
             </ul>
       </div>
@@ -238,7 +230,7 @@ de Provence, France.</div>
 
 <div class="feedback">
       <div class="cat bold">
-            <p>RECOMMENDATIONS #</p>
+            <p>REFERENCES #</p>
 
       </div>
       <p class="center">
@@ -285,7 +277,52 @@ de Provence, France.</div>
             *************************************
       </div>
 </div>
+<script>
+      var cursor = $(".cursor"),
+          follower = $(".cursor-follower");
 
+      var posX = 0,
+          posY = 0,
+          mouseX = 0,
+          mouseY = 0;
+
+      TweenMax.to({}, 0.016, {
+          repeat: -1,
+          onRepeat: function() {
+              posX += (mouseX - posX) / 9;
+              posY += (mouseY - posY) / 9;
+
+              TweenMax.set(follower, {
+                  css: {
+                      left: posX - 20,
+                      top: posY - 20
+                  }
+              });
+
+              TweenMax.set(cursor, {
+                  css: {
+                      left: mouseX,
+                      top: mouseY
+                  }
+              });
+          }
+      });
+
+      $(document).on("mousemove", function(e) {
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+      });
+
+      $(".receipt").on("mouseenter", function() {
+          cursor.addClass("active");
+          follower.addClass("active");
+      });
+
+      $(".receipt").on("mouseleave", function() {
+          cursor.removeClass("active");
+          follower.removeClass("active");
+      });
+      </script>
 
 
 </body>

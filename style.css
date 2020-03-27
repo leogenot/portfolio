@@ -3,6 +3,11 @@
   src: url(fonts/monument.otf);
 }
 
+@font-face {
+  font-family: kings;
+  src: url(kings.ttf);
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,35 +15,11 @@ html, body {
   -webkit-font-smoothing : subpixel-antialiased;
   -moz-osx-font-smoothing : auto;
   overflow: hidden;
+  font-family: kings;
   
 }
 
 
-
-html:before {
-  animation: grain 8s steps(10) infinite;
-  background-image: url("images/noise.png");
-  content: "";
-  height: 300%;
-  left: -50%;
-  opacity: 0.3;
-  position: fixed;
-  top: -100%;
-  width: 300%;
-}
-
-@keyframes grain {
-  0%, 100% { transform:translate(0, 0) }
-  10% { transform:translate(-5%, -10%) }
-  20% { transform:translate(-15%, 5%) }
-  30% { transform:translate(7%, -25%) }
-  40% { transform:translate(-5%, 25%) }
-  50% { transform:translate(-15%, 10%) }
-  60% { transform:translate(15%, 0%) }
-  70% { transform:translate(0%, 15%) }
-  80% { transform:translate(3%, 35%) }
-  90% { transform:translate(-10%, 10%) }
-}
 
 .nav-wrapper {
   width: 100%;
@@ -62,38 +43,26 @@ nav {
 span {
 
   display: inline-block;
-  font-family: monument;
-  font-weight: 300;
-  color: transparent;
-  background-color: transparent;
-  -webkit-text-stroke: 0.7px white;
+  
   font-size: 40px;
   text-transform: uppercase;
   pointer-events: none;
   transition: transform 0.1s linear;
+
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  letter-spacing: 5px;
 }
 
 h1 {
-	font-family: monument;
   font-weight: 300;
   font-size: 40px;
   mix-blend-mode: difference;
 
 }
 
-.cursor {
-  pointer-events: none;
-  position: fixed;
-  padding: 0.3rem;
-  background-color: #fff;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  transition: transform 0.3s ease;
-}
 
-.hover-this:hover ~ .cursor {
-  transform: translate(-50%, -50%) scale(8);
-}
 
 @media(min-width: 900px) {
   nav {
@@ -105,6 +74,7 @@ h1 {
 @media(max-width: 900px) {
   nav {
     top: 30%;
+    mix-blend-mode: difference;
 
     
   }
@@ -161,3 +131,47 @@ img {
 }
 
 
+.cursor {
+  position: absolute;
+  background: white;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+      0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0.8);
+  
+}
+
+.cursor.active {
+  opacity: 1;
+  transform: scale(1);
+  background: white;
+}
+
+.cursor.active::before {
+  opacity: 1;
+}
+
+.cursor-follower {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+      0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: translate(4px, 4px);
+}
+
+.cursor-follower.active {
+  opacity: 0.3;
+  transform: scale(3);
+  background: white;
+}
