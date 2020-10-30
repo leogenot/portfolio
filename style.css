@@ -7,7 +7,7 @@ body {
   height: 100%;
   font-family: "Monument Extended";
   background: #121212;
-  overflow: hidden;
+  overflow-x : hidden;
 }
 
 .vers-title h1 {
