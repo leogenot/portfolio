@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="harrnish" />
+    <title>My Work</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- TweenMax - GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    <div class="navigation-wrapper">
+      <div class="project-preview-wrapper">
+        <div class="project-preview"></div>
+      </div>
+      <ul class="navigation-list">
+        <li class="navigation-item">
+          <a class="navigation-link navigation-link-1" href="../portrait/index.html">
+            <span data-text="Portraits">Portraits</span>
+          </a>
+        </li>
+        <div class="project-overlay"></div>
+        <li class="navigation-item">
+          <a class="navigation-link navigation-link-2" href="../landscape/index.html">
+            <span data-text="Landscapes">Landscapes</span>
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-link navigation-link-3" href="../clothing/index.html">
+            <span data-text="Clothing">Clothing</span>
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-link navigation-link-4" href="../programming/index.html">
+            <span data-text="Programming">Programming</span>
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-link navigation-link-5" href="../about/about.html">
+            <span data-text="About‏‏‎‎‎Me">About‎‏‏‎‎Me</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="progressbar"></div>
+
+    <script>
+      var cursor = $(".cursor"),
+          follower = $(".cursor-follower");
+
+      var posX = 0,
+          posY = 0,
+          mouseX = 0,
+          mouseY = 0;
+
+      TweenMax.to({}, 0.016, {
+          repeat: -1,
+          onRepeat: function() {
+              posX += (mouseX - posX) / 9;
+              posY += (mouseY - posY) / 9;
+
+              TweenMax.set(follower, {
+                  css: {
+                      left: posX - 20,
+                      top: posY - 20
+                  }
+              });
+
+              TweenMax.set(cursor, {
+                  css: {
+                      left: mouseX,
+                      top: mouseY
+                  }
+              });
+          }
+      });
+
+      $(document).on("mousemove", function(e) {
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+      });
+
+      $(".navigation-item").on("mouseenter", function() {
+          cursor.addClass("active");
+          follower.addClass("active");
+      });
+
+      $(".navigation-item").on("mouseleave", function() {
+          cursor.removeClass("active");
+          follower.removeClass("active");
+      });
+
+
+
+
+
+
+
+      $(document).ready(function() {
+        TweenMax.set(".project-preview", { width: 0 });
+
+        var tl = new TimelineLite();
+
+        $(document)
+          .on("mouseover", ".navigation-item", function(evt) {
+            tl = new TimelineLite();
+            tl.to($(".project-preview"), 1, {
+              width: "600px",
+              ease: Expo.easeInOut
+            });
+          })
+          .on("mouseout", ".navigation-item", function(evt) {
+            tl = new TimelineLite();
+            tl.to($(".project-preview"), 0.5, {
+              width: 0,
+              ease: Expo.easeInOut
+            });
+          });
+      });
+
+      $(".navigation-link-1").hover(function() {
+        $(".project-preview").css({ "background-image": "url(portrait.jpg)" });
+      });
+
+      $(".navigation-link-2").hover(function() {
+        $(".project-preview").css({ "background-image": "url(landscape.jpg)" });
+      });
+
+      $(".navigation-link-3").hover(function() {
+        $(".project-preview").css({ "background-image": "url(clothing.jpg)" });
+      });
+
+      $(".navigation-link-4").hover(function() {
+        $(".project-preview").css({ "background-image": "url(programming.png)" });
+      });
+
+      $(".navigation-link-5").hover(function() {
+        $(".project-preview").css({ "background-image": "url(me.jpg)" });
+      });
+
+
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop(),
+          dh = $(document).height(),
+          wh = $(window).height();
+        scrollPercent = (scroll / (dh - wh)) * 100;
+        $(".progressbar").css("height", scrollPercent + "%");
+      });
+    </script>
+  </body>
+
+
+
+  <footer>
+    <p>Leo Genot | 2020</p>
+  </footer>
+</html>

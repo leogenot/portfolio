@@ -1,96 +1,177 @@
+@font-face {
+  font-family: monument;
+  src: url(fonts/monument.otf);
+}
 
-html,
-body {
-  margin: 0%;
-  padding: 0%;
+@font-face {
+  font-family: kings;
+  src: url(kings.ttf);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  -webkit-font-smoothing : subpixel-antialiased;
+  -moz-osx-font-smoothing : auto;
+  overflow: hidden;
+  font-family: kings;
+  
+}
+
+
+
+.nav-wrapper {
   width: 100%;
-  height: 100%;
-  font-family: "Monument Extended";
-  background: #121212;
-  overflow-x : hidden;
+  height: 100vh;
+  background: #161616;
+
+}
+nav {
+
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
 }
 
-.vers-title h1 {
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+span {
+
+  display: inline-block;
+  
+  font-size: 40px;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: transform 0.1s linear;
+
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  letter-spacing: 5px;
+}
+
+h1 {
   font-weight: 300;
-  color: white;
+  font-size: 40px;
+  mix-blend-mode: difference;
+
 }
 
+
+
+@media(min-width: 900px) {
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media(max-width: 900px) {
+  nav {
+    top: 30%;
+    mix-blend-mode: difference;
+
+    
+  }
+
+  .hover-this {
+    width: 100%;
+    padding: 20px 0;
+    display: inline-block;
+  }
+}
+
+
+img {
+  max-height: 90%;
+  max-width: 90%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+@keyframes ticker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.tcontainer{
+  width: 100%;
+
+}
+.ticker-wrap {
+  width: 100%;
+  padding-left: 100%;
+  background-color: #161616;
+}
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 70s;
+}
+
+.ticker-item{
+  display: inline-block;
+  padding: 0 1rem;
+  color: white;
+  font-family: poppins;
+}
 
 
 .cursor {
   position: absolute;
-  width: 600px;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  transform: scale(0.1);
-  opacity: 0;
-  margin: -100px 0 0 -100px;
-  background: url(image-1.jpg) no-repeat 50% 50%;
-  background-size: cover;
+  background: white;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
   z-index: 1;
-}
-
-.wrapper {
-  width: 80%;
-  margin: 180px auto;
-  height: 100%;
-}
-
-.vers {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-basis: 1;
-  position: relative;
-  z-index: 2;
-  color: white;
-  mix-blend-mode: difference;
-}
-
-
-.vers-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}  
-
-/* 
-
-
-.vers-item {
-  display: block;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+      0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
   user-select: none;
-  margin: 50px 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  
 }
 
-a {
-  font-family: "Cosi Azure";
-  font-size: 30px;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.3);
+.cursor.active {
+  opacity: 1;
+  transform: scale(1);
+  background: white;
 }
 
-span {
-  position: relative;
-  display: block;
+.cursor.active::before {
+  opacity: 1;
 }
 
-.vers-item span:before {
-  width: 0;
-  height: 90%;
-  color: #ffffff;
-  overflow: hidden;
+.cursor-follower {
   position: absolute;
-  content: attr(data-text);
-  transition: all 3s cubic-bezier(0.84, 0, 0.08, 0.99);
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+      0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: translate(4px, 4px);
 }
 
-.vers-item span:hover:before {
-  width: 100%;
-}*/
+.cursor-follower.active {
+  opacity: 0.3;
+  transform: scale(3);
+  background: white;
+}
