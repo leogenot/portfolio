@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #171717;
+    overflow: hidden;
+    
+    font-family: "NeutralFace";
+}
+
+body:before {
+    animation: grain 8s steps(10) infinite;
+    background-image: url("../images/noise.png");
+    content: "";
+    height: 300%;
+    left: -50%;
+    opacity: 0.3;
+    position: fixed;
+    top: -100%;
+    width: 300%;
+    pointer-events: none;
+  }
+
+
+  @keyframes grain {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-5%, -10%);
+    }
+    20% {
+      transform: translate(-15%, 5%);
+    }
+    30% {
+      transform: translate(7%, -25%);
+    }
+    40% {
+      transform: translate(-5%, 25%);
+    }
+    50% {
+      transform: translate(-15%, 10%);
+    }
+    60% {
+      transform: translate(15%, 0%);
+    }
+    70% {
+      transform: translate(0%, 15%);
+    }
+    80% {
+      transform: translate(3%, 35%);
+    }
+    90% {
+      transform: translate(-10%, 10%);
+    }
+  }
+  
+
+.home {
+    overflow: hidden;
+}
+
+/* menu */
+nav {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.menu__logo, .menu__items-link {
+    padding: 40px;
+}
+
+.menu__logo a {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu__items {
+    display: flex;
+}
+
+.menu__items-link a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.menu__items-link.active a {
+    text-decoration: underline;
+}
+
+@media(max-width: 500px) {
+
+  nav {
+      justify-content: center;
+  }
+}
+
+
+
+
+/* project section */
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(10px);
+    display: none;
+    cursor: pointer;
+  }
+  
+  #lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    padding: 4px;
+    cursor: auto;
+    object-fit: contain;
+  }
+
+.project__container {
+    width: 70%;
+    margin: 100px auto;
+    color: #fff;
+    padding: 120px 40px;
+    text-align: center;
+}
+
+.project__container-title h1{
+    color: #fff;
+    font-family: "Reveaux";
+    font-size: 140px;
+}
+
+.project__container-subtitle {
+    margin: 20px 0;
+    font-family: "NeutralFace";
+    font-size: 8px;
+    color: darkgrey;
+}
+
+.project__container-subtitle-text {
+    margin: 20px 0;
+    font-family: "NeutralFace";
+    font-size: 16px;
+}
+
+.project__container-images {
+    position: relative;
+    width: 100%;
+    height: 2000px;
+    padding: 40px 0;
+}
+
+.project__image {
+    background: red;
+    width: 600px;
+    height: 500px;
+    margin: 40px auto;
+
+    image-rendering: auto;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.project__image-one {
+    background: no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.project__image-two {
+    position: relative;
+    top: -100px;
+    left: -260px;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.project__image-three {
+    position: relative;
+    left: 300px;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.project__image-four {
+    position: relative;
+    top: -200px;
+    left: -100px;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.project-next-link {
+    position: relative;
+    top: -100px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-next-link a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "GrandSlang Roman";
+    font-size: 160px;
+}
+
+.anime-js-title .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+@media(max-width: 900px) {
+    .project__container-title h1 {
+        font-size: 40px;
+    }
+
+    .project__container {
+        width: 80%;
+    }
+
+    .project__container-images {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project__image {
+        width: 90%;
+    }
+
+    .project__image-one, .project__image-two, .project__image-three, .project__image-four {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
