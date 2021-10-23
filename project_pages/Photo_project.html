@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="../css/styleProjects.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"/> 
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+
+<div class="wrapper">
+
+
+    <!-- project section -->
+    <div class="project__container" data-scroll-section>
+
+        <div class="project__container-title" data-scroll>
+            <h1 class="anime-js-title">Photography</h1>
+        </div>
+        <div class="project__container-subtitle" data-scroll>
+            <p>ART</p>
+        </div>
+        <div class="project__container-subtitle-text" data-scroll>
+            <p>Some of my favorite photos taken throughout the years.</p>
+        </div>
+
+        <div class="project__container-images" style="height: 3200px;">
+            <div data-scroll data-scroll-speed="1">
+                <img class="project__image project__image-one"
+                    src="../images/photo/lea.jpg">
+            </div>
+            <div data-scroll data-scroll-speed="4">
+                <img class="project__image project__image-two"
+                    src="../images/photo/mer.jpg">
+            </div>
+            <div data-scrol data-scroll-speed="2">
+                <img class="project__image project__image-three"
+                    src="../images/photo/lac.jpg">
+            </div>
+            <div data-scroll data-scroll-speed="4">
+                <img class="project__image project__image-four"
+                    src="../images/photo/neige.jpg">
+            </div>
+
+            <div data-scroll data-scroll-speed="2">
+                <img class="project__image project__image-five"
+                    src="../images/photo/neon.jpg">
+            </div>
+            <div data-scroll data-scroll-speed="4">
+                <img class="project__image project__image-six"
+                    src="../images/photo/skate.jpg">
+            </div>
+        </div>
+
+        <div class="project-next-link" data-scroll>
+            <a href="Film_project.html" >Next</a>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+// smooth scroll 
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('body'),
+  smooth: true,
+  smoothMobile: true,
+});
+const lightbox = document.createElement('div')
+lightbox.id = 'lightbox'
+document.body.appendChild(lightbox)
+
+const images = document.querySelectorAll('img')
+images.forEach(image => {
+  image.addEventListener('click', e => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = image.src
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return
+  lightbox.classList.remove('active')
+})
+
+
+
+</script>

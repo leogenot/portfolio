@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="../css/styleProjects.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"/> 
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+
+<div class="wrapper">
+
+
+    <!-- project section -->
+    <div class="project__container" data-scroll-section>
+
+        <div class="project__container-title" data-scroll>
+            <h1 class="anime-js-title">Filmmaking</h1>
+        </div>
+        <div class="project__container-subtitle" data-scroll>
+            <p>ART</p>
+        </div>
+        <div class="project__container-subtitle-text" data-scroll>
+            <p>The best videos I mades throughout the years.</p>
+        </div>
+
+        <div class="project__container-images">
+            <div data-scroll data-scroll-speed="1">
+                <iframe class="project__image project__image-one" src="https://www.youtube.com/embed/mukYt13VhS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div data-scroll data-scroll-speed="4">
+                <iframe class="project__image project__image-two" src="https://www.youtube.com/embed/Byher2UOCTU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div data-scrol data-scroll-speed="2">
+                <iframe class="project__image project__image-three" src="https://www.youtube.com/embed/BslH0BdRysw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div data-scroll data-scroll-speed="4">
+                <iframe class="project__image project__image-four" src="https://www.youtube.com/embed/A6dgFOw-fmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="project-next-link" data-scroll>
+            <a href="BNP_project.html" >Next</a>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+// smooth scroll 
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('body'),
+  smooth: true,
+  smoothMobile: true,
+});
+const lightbox = document.createElement('div')
+lightbox.id = 'lightbox'
+document.body.appendChild(lightbox)
+
+const images = document.querySelectorAll('img')
+images.forEach(image => {
+  image.addEventListener('click', e => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = image.src
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return
+  lightbox.classList.remove('active')
+})
+
+
+
+</script>
