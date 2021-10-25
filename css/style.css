@@ -377,8 +377,6 @@ a:hover {
   display: flex;
   letter-spacing: -0.5px;
   align-items: center;
-  height: 100vh;
-  overflow-y: hidden;
 
 }
 @media screen and (max-width: 1260px) {
@@ -732,6 +730,7 @@ justify-content: center;
   top: 0;
   left: 0;
   background-color: rgb(0,0,0);
+  overflow-y:auto;
   transition: 0.5s;
 }
 
