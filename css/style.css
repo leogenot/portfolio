@@ -738,18 +738,23 @@ justify-content: center;
   position: relative;
   top: 0;
   width: 100%;
+
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
   
 }
 
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 36px;
   color: #818181;
-  display: block;
   transition: 0.3s;
 }
-
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
 .overlay a:hover, .overlay a:focus {
   color: #f1f1f1;
 }
@@ -790,11 +795,11 @@ justify-content: center;
   margin-top: 5%;
   align-items: center;
   display: flex;
-  height: 70vh;
   justify-content: center;
   position: relative;
   align-items: center;
-  overflow-y: hidden;
+  top: 0;
+  text-align: left;
 }
 #about-overlay > #about {
 
@@ -856,8 +861,9 @@ justify-content: center;
   }
 
   .about__container-link a {
-    color: black;
+    color: white;
     font-size: 16px;
+    display: none;
   }
 }
 
