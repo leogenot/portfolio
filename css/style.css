@@ -733,7 +733,9 @@ justify-content: center;
   overflow-y:auto;
   transition: 0.5s;
 }
-
+#Socials_overlay > .overlay-content{
+  top: 25%;
+}
 .overlay-content{
   position: relative;
   top: 0;
