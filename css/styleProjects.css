@@ -272,3 +272,9 @@ body {
         left: 0;
     }
 }
+
+
+#github_repo{
+  text-decoration: none;
+  color: #fff;
+}

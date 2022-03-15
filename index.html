@@ -42,7 +42,28 @@
       </div>
 
 
+      <div class="blog-header">
+        <div class="blog-article header-article" data-scroll-section>
+          <div class="blog-big__title">Generative Deep Drawing</div>
+          <div class="blog-menu small-title date">2022</div>
+        </div>
+        <div class="blog-article">
+          <img src="./images/generative_deep_learning/sample_6500.png" alt="">
+          <h2>Random sketches generation using AI</h2>
+          <div class="blog-detail">
+            <span>UI / UX / DEV</span>
+          </div>
+          <p >Web tool to generate random sketches using tensorflowjs (adapted from python to work as a standalone web page).</p>
+          <a href="#" onclick="openOverlay('generative_project_overlay')">
+            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
+              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
+              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
+            </svg>
 
+          </a>
+        </div>
+      </div>
       <div class="blog-header">
         <div class="blog-article header-article" data-scroll-section>
           <div class="blog-big__title">BNP</div>
@@ -283,7 +304,12 @@
           target="_blank">Download my CV</a></li>
     </div>
   </div>
-
+  <div id="generative_project_overlay" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('generative_project_overlay')">CLOSE</a>
+    <div class="overlay-content" id="project">
+      <iframe src="./project_pages/generative_deep_learning.html" class="project_iframe"></iframe>
+    </div>
+  </div>
   <div id="BNP_project_overlay" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('BNP_project_overlay')">CLOSE</a>
     <div class="overlay-content" id="project">
