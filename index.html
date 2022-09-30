@@ -1,359 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Léo Genot - Portfolio 2021</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <head>
+        <title>Parcel Sandbox</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="src/styles.scss" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Canonical -->
+        <link rel="canonical" href="https://www.example.com">
+        <!-- Robots -->
+        <meta name="robots" content="noindex, nofollow">
+        <!-- Device -->
+        <!-- <meta name="viwport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+        <meta name="format-detection" content="telephone=no">
+        <!-- Title -->
+        <title>Benjamin Code Scalpel</title>
+        <!-- Description -->
+        <meta name="description" content="Home description.">
+        <!-- Social -->
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Quick Parcel Project — Home">
+        <meta name="twitter:description" content="Home description.">
+        <meta name="twitter:image" content="#">
+        <!-- Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.example.com">
+        <meta property="og:title" content="Quick Parcel Project — Home">
+        <meta property="og:description" content="Home description.">
+        <meta property="og:image" content="#">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <!-- Favicon -->
+        <meta name="theme-color" content="#fff">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&family=Tenor+Sans&display=swap"
+            rel="stylesheet">
+    </head>
 
+    <body data-scroll-container>
 
-
-
-</head>
-
-<body>
-  <!-- partial:index.partial.html -->
-
-  <div class="loader">
-    <h1 class="txt" data-fill-text="LÉO GENOT">LÉO GENOT</h1>
-    <div class="hero-image"></div>
-  </div>
-
-  <div class=" blog">
-    <div class="blog-header-container" id="page-content">
-
-
-      <div class="secondary-section" id="nav_top">
-        <li class="NO_cursor">Léo Genot</li>
-        <li class="NO_cursor">Portfolio</li>
-        <li class="about_me"><a href="#" onclick="openOverlay('About_overlay')">About Me</a></li>
-      </div>
-
-      <div class="secondary-section-mobile" id="nav_top_mobile">
-        <li class="NO_cursor">Léo Genot</li>
-        <li class="NO_cursor">&nbsp</li>
-
-
-
-        <li class="about_me"><a href="#" onclick="openOverlay('About_overlay')">About Me</a></li>
-      </div>
-
-
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">Deep Drawing</div>
-          <div class="blog-menu small-title date">2022</div>
+        <div class="hero" data-scroll-container>
+            <div data-scroll-section>
+                <h1 data-scroll>Hey</h1>
+                <p data-scroll>👋</p>
+            </div>
+            <div data-scroll-section>
+                <h2 data-scroll data-scroll-speed="1">What's up?</h2>
+                <p data-scroll data-scroll-speed="2">😬</p>
+            </div>
         </div>
-        <div class="blog-article">
-          <img src="./images/generative_deep_learning/sample_6500.png" alt="">
-          <h2>Random sketches generation using AI</h2>
-          <div class="blog-detail">
-            <span>UI / UX / DEV</span>
-          </div>
-          <p >Web tool to generate random sketches using tensorflowjs (adapted from python to work as a standalone web page).</p>
-          <a href="#" onclick="openOverlay('generative_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">BNP</div>
-          <div class="blog-menu small-title date">2020</div>
-        </div>
-        <div class="blog-article">
-          <img src="./images/bnp/3.png" alt="">
-          <h2>Loan simulation tool</h2>
-          <div class="blog-detail">
-            <span>UI / UX / DEV</span>
-          </div>
-          <p>Web tool to help customer and advisors see the benefits of loan insurances.</p>
-          <a href="#" onclick="openOverlay('BNP_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">Studimac</div>
-          <div class="blog-menu small-title date">2021</div>
-        </div>
-        <div class="blog-article">
-          <img src="./images/studimac/1.jpg" alt="">
-          <h2>Organization app for students</h2>
-          <div class="blog-detail">
-            <span>UI / UX</span>
-          </div>
-          <p>Help student stay organized when working from home or not, centralize all their favorite school apps</p>
-          <a href="#" onclick="openOverlay('Studimac_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">VisuTerre</div>
-          <div class="blog-menu small-title date">2021</div>
-        </div>
-        <div class="blog-article">
-          <img src="./images/visuterre/1.png" alt="">
-          <h2>3D terrain visualizer</h2>
-          <div class="blog-detail">
-            <span>DEV</span>
-          </div>
-          <p>3D terrain visualizer made in OpenGL and C++</p>
-          <a href="#" onclick="openOverlay('Visuterre_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
-
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">COLORS</div>
-          <div class="blog-menu small-title date">2019</div>
-        </div>
-        <div class="blog-article">
-          <img src="./images/colors/colors.png" alt="">
-          <h2>COLORS Records website redesign</h2>
-          <div class="blog-detail">
-            <span>UI / UX</span>
-          </div>
-          <p>Redesign of COLORS Records website to help them gain visibility and new public</p>
-          <a href="#" onclick="openOverlay('Colors_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">Photography</div>
-          <div class="blog-menu small-title date">2021</div>
-        </div>
-        <div class="blog-article">
-          <img src="./images/photo/neige.jpg" alt="">
-          <h2>Photos I took</h2>
-          <div class="blog-detail">
-            <span>ART</span>
-          </div>
-          <p>Some photos I took throughout the years</p>
-          <a href="#" onclick="openOverlay('Photo_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
-
-      <div class="blog-header">
-        <div class="blog-article header-article" data-scroll-section>
-          <div class="blog-big__title">Filmmaking</div>
-          <div class="blog-menu small-title date">2021</div>
-        </div>
-        <div class="blog-article">
-          <img src="./images/me.jpeg" alt="">
-          <h2>Videos I made</h2>
-          <div class="blog-detail">
-            <span>ART</span>
-          </div>
-          <p>Some videos I made throughout the years</p>
-          <a href="#" onclick="openOverlay('Film_project_overlay')">
-            See More<svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-              <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-              <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-            </svg>
-
-          </a>
-        </div>
-      </div>
 
 
 
-      <div class="secondary-section" id="nav_bottom">
-        <li class="date_nav">2021</li>
+        <script type="module" src="src/index.ts"></script>
 
-        <li class="email_nav"><a href="mailto:leogenot@gmail.com" target="_blank">leogenot@gmail.com</a></li>
-        <li class="github_nav"><a href="https://www.github.com/leogenot" target="_blank">Github</a></li>
-        <li class="linkedin_nav"><a href="https://www.linkedin.com/in/leo-genot-88580b176/" target="_blank">LinkedIn</a>
-        </li>
-        <li class="instagram_nav"><a href="https://www.instagram.com/leogenot" target="_blank">Instagram</a></li>
-        <li class="youtube_nav"><a href="https://www.youtube.com/channel/UCTy2DFV4djNni5fskteT16Q"
-            target="_blank">Youtube</a></li>
-      </div>
-
-      <div class="secondary-section-mobile" id="nav_bottom_mobile">
-
-        <li class="email_nav"><a href="mailto:leogenot@gmail.com" target="_blank">leogenot@gmail.com</a></li>
-        <li class="socials_nav"><a href="#" onclick="openOverlay('Socials_overlay')">Socials</a></li>
-      </div>
-    </div>
-
-
-
-
-
-    <div class="blog-part is-menu">
-      <a id="scroll-a"><svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-          <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-          <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-        </svg>Scroll
-        <svg width="22" height="22" viewBox="0 0 414 414" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="30" y1="-1.31134e-06" x2="30" y2="345" stroke="black" stroke-width="60" />
-          <path d="M345 30L1.49012e-07 30" stroke="black" stroke-width="60" />
-          <path d="M22 22L392.107 392.107" stroke="black" stroke-width="60" />
-        </svg></a>
-      <div class="shape">
-        <div id="slider-container">
-          <input type="range" min="0" max="100" step="1" value="0" orient="vertical" id="scroll-range">
-        </div>
-      </div>
-
-
-
-
-      <div class="slider -slow" id="marquee-slider">
-        <div><a href="./assets/cv.pdf" target="_blank">Download my CV</a></div>
-        <div><a href="./assets/cv.pdf" target="_blank">Download my CV</a></div>
-        <div><a href="./assets/cv.pdf" target="_blank">Download my CV</a></div>
-        <div><a href="./assets/cv.pdf" target="_blank">Download my CV</a></div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div id="About_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('About_overlay')">CLOSE</a>
-    <div class="overlay-content" id="about">
-
-
-
-      <div class="about__container">
-        <p class="about__container-data">Bonjour! I'm
-          <span class="name">Léo Genot</span>, creative engineer, programmer and creative director.
-          <span>Paris,</span>
-          France.
-        </p>
-
-        <p>Question? Need? let's keep
-          <span class="about__container-contact-link">
-            <a href="mailto:leogenot@gmail.com" target="_blank">in touch.</a>
-          </span>
-        </p>
-
-
-        <p class="about__container-data about__container-link">
-          <a href="https://www.instagram.com/leogenot" target="_blank">Instagram.</a>
-          <a href="https://www.github.com/leogenot" target="_blank">GitHub.</a>
-          <a href="https://www.youtube.com/channel/UCTy2DFV4djNni5fskteT16Q" target="_blank">Youtube.</a>
-          <a href="https://www.linkedin.com/in/leo-genot-88580b176/" target="_blank">LinkedIn.</a>
-        </p>
-
-
-
-      </div>
-    </div>
-  </div>
-
-  <div id="Socials_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('Socials_overlay')">CLOSE</a>
-
-    <div class="overlay-content">
-      <li class="email_nav"><a href="mailto:leogenot@gmail.com" target="_blank">leogenot@gmail.com</a></li>
-      <li class="github_nav"><a href="https://www.github.com/leogenot" target="_blank">Github</a></li>
-      <li class="linkedin_nav"><a href="https://www.linkedin.com/in/leo-genot-88580b176/" target="_blank">LinkedIn</a>
-      </li>
-      <li class="instagram_nav"><a href="https://www.instagram.com/leogenot" target="_blank">Instagram</a></li>
-      <li class="youtube_nav"><a href="https://www.youtube.com/channel/UCTy2DFV4djNni5fskteT16Q"
-          target="_blank">Youtube</a></li>
-
-      <li class="cv_nav"><a href="assets/cv.pdf"
-          target="_blank">Download my CV</a></li>
-    </div>
-  </div>
-  <div id="generative_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('generative_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/generative_deep_learning.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-  <div id="BNP_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('BNP_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/BNP_project.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-
-  <div id="Studimac_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('Studimac_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/Studimac_project.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-
-  <div id="Visuterre_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('Visuterre_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/Visuterre_project.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-
-  <div id="Colors_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('Colors_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/Colors_project.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-
-  <div id="Photo_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('Photo_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/Photo_project.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-
-  <div id="Film_project_overlay" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay('Film_project_overlay')">CLOSE</a>
-    <div class="overlay-content" id="project">
-      <iframe src="./project_pages/Film_project.html" class="project_iframe"></iframe>
-    </div>
-  </div>
-
-  <script src="./js/script.js"></script>
-
-</body>
+    </body>
 
 </html>
