@@ -3,7 +3,6 @@
 @import "scss/fonts";
 @import "scss/_root-variables";
 @import "scss/base";
-
 body {
   padding: 0 32px;
   font-family: var(--fs-body);
@@ -48,6 +47,7 @@ section {
   height: 100vh;
   background-color: lightgrey;
 
+  border-radius: 3vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,51 +130,4 @@ section.footer-container {
   width: 80vw;
   background-color: #f0f0f0;
   border-radius: 3px;
-}
-
-//header
-.Header_header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  //color: var(--light-grey);
-  //mix-blend-mode: difference;
-  height: 90px;
-}
-.SmoothArea {
-  position: fixed;
-  top: 0;
-}
-
-.Header_headerGrid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 25px;
-  height: 90px;
-  padding-top: 42px;
-}
-
-.Header_title {
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
-
-.Header_currentRole {
-  display: inline;
-  display: initial;
-  grid-column-start: 4;
-  grid-column-end: 7;
-}
-
-.Header_location {
-  display: inline;
-  display: initial;
-  grid-column-start: 7;
-  grid-column-end: 10;
-}
-
-.Header_navArea {
-  grid-column-start: 10;
-  grid-column-end: 13;
 }
