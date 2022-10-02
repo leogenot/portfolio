@@ -55,6 +55,8 @@ section {
         justify-content: center;
         //border-radius: 3vw;
         margin-top: var(--nav-height);
+        height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
 
         h1 {
             font-size: calc(54vw * 100 / 1440);
