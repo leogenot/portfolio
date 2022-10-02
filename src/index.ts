@@ -3,63 +3,98 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-
+/* 
 
 const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".scroll-wrapper"),
+    el: document.querySelector("[data-scroll-container]"),
     smooth: true,
 
-    // // --- // for versions (since 4.0.0 ??)
-    // // --- // for tablet smooth
-    // tablet: { smooth: true },
-    // // --- // for mobile
-    // smartphone: { smooth: true }
-
 });
-locoScroll.on("scroll", ScrollTrigger.update);
+ */
 
-ScrollTrigger.scrollerProxy(".scroll-wrapper", {
-    scrollTop(value) {
-        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    },
 
-    // Apparently, thefollwoing line is not required make pinning work on touch screen (since 4.0.0 ??)
-    // but (since 4.0.0 ??) the grabbing seems buggy, so 3.6.1 is still being used in this demo 
+let scroll;
+const htmlElement = document.querySelector("html");
+const body = document.body;
+const select = (e) => document.querySelector(e);
+const selectAll = (e) => document.querySelectorAll(e);
+const container = select('.text-container');
+const scroller = select('[data-scroll-container]');
 
-    pinType: document.querySelector(".scroll-wrapper").style.transform ? "transform" : "fixed"
+function initSmoothScroll(container) {
 
+    scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+    });
+
+    scroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+        scrollTop(value) {
+            return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+        pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+    });
+
+    /**
+     * Remove Old Locomotive Scrollbar
+     */
+    const scrollbar = selectAll('.c-scrollbar');
+
+    if (scrollbar.length > 1) {
+        scrollbar[0].remove();
+    }
+
+    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+    ScrollTrigger.addEventListener('refresh', () => scroll.update());
+
+    // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+    ScrollTrigger.refresh();
+
+}
+
+function initShowHideHeader() {
+
+    const header = select('.menu-container');
+
+    const showHeaderAnim = gsap.from(header, {
+        yPercent: -100,
+        paused: true,
+        duration: 0.3
+    }).progress(1);
+
+    ScrollTrigger.create({
+        scroller: scroller,
+        start: 'top top',
+        end: 99999,
+        onUpdate: (self) => {
+            self.direction === -1 ? showHeaderAnim.play() : showHeaderAnim.reverse();
+            console.log(self.direction);
+        }
+    });
+
+
+}
+
+function initScript() {
+    initSmoothScroll();
+    initShowHideHeader();
+}
+
+function updateLoco() {
+    scroll.update();
+    console.log('loco scroll updated');
+}
+
+window.onresize = updateLoco;
+
+window.addEventListener('load', function () {
+    initScript();
 });
 
-ScrollTrigger.defaults({ scroller: '.scroll-wrapper' });
 
-
-
-
-
-gsap.set('section.footer__container', { yPercent: -50 })
-
-const uncover = gsap.timeline({ paused: true })
-
-uncover
-    .to('section.footer__container', { yPercent: 0, ease: 'none' })
-    ;
-
-ScrollTrigger.create({
-    trigger: '.scroll-wrapper__content',
-    start: 'bottom bottom',
-    end: '+=75%',
-    animation: uncover,
-    scrub: true,
-    markers: true,
-})
-
-
-
-
-
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-ScrollTrigger.refresh();
