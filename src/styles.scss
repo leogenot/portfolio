@@ -3,35 +3,22 @@
 @import "scss/fonts";
 @import "scss/_root-variables";
 @import "scss/base";
+
 body {
     font-family: var(--fs-body);
     background-color: var(--bg-color);
 }
-
-.scroller {
+a {
+    text-decoration: underline;
 }
 
-.hero {
-    background: antiquewhite;
+section {
+    min-height: calc(100vh - var(--nav-height));
+    background-color: lightgrey;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //border-radius: 3vw;
-    margin-top: var(--nav-height);
-
-    h1 {
-        font-size: calc(54vw * 100 / 1440);
-        margin-bottom: calc(12vw * 100 / 1440);
-    }
-
-    p {
-        font-size: calc(24vw * 100 / 1440);
-    }
-}
-
-a {
-    text-decoration: underline;
 }
 
 .navbar {
@@ -48,48 +35,52 @@ a {
     color: #6d6458;
     background-color: var(--bg-color);
     z-index: 100;
+
+    &__menu {
+        display: flex;
+    }
+
+    &__menu-item {
+        margin-left: 60px;
+    }
 }
 
-.site-menu {
-    display: flex;
+.scroll-wrapper {
+    //height: calc(100vh - var(--nav-height));
+    &__content {
+        background: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        //border-radius: 3vw;
+        margin-top: var(--nav-height);
+
+        h1 {
+            font-size: calc(54vw * 100 / 1440);
+            margin-bottom: calc(12vw * 100 / 1440);
+        }
+
+        p {
+            font-size: calc(24vw * 100 / 1440);
+        }
+    }
 }
 
-.menu-item {
-    margin-left: 60px;
-}
-
-section {
-    min-height: 100vh;
-    background-color: lightgrey;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-section.description {
-    background-color: white;
-}
-
-footer {
+.footer {
     height: 20vh;
     background-color: #222;
     overflow: hidden;
-}
 
-section.footer-container {
-    //height: 75vh;
-    color: #f0f0f0;
-    background-color: var(--bg-color);
+    &__container {
+        color: #f0f0f0;
+        background-color: var(--bg-color);
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.big-div {
-    height: 200vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .inverted-border-radius {
@@ -117,4 +108,8 @@ section.footer-container {
     border-top-left-radius: var(--body-radius);
     border-top-right-radius: var(--body-radius);
     box-shadow: 0 -40px 0 0 var(--bg-color);
+}
+
+.big-div {
+    height: 200vh;
 }
