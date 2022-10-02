@@ -100,7 +100,7 @@ uncover
     ;
 
 ScrollTrigger.create({
-    trigger: 'section.conclusion',
+    trigger: 'section.hero',
     start: 'bottom bottom',
     end: '+=75%',
     animation: uncover,
