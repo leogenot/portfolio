@@ -3,22 +3,11 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-/* 
-
-const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-
-});
- */
 
 
 let scroll;
-const htmlElement = document.querySelector("html");
-const body = document.body;
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
-const container = select('.text-container');
 const scroller = select('[data-scroll-container]');
 
 function initSmoothScroll(container) {
@@ -65,16 +54,16 @@ function initShowHideHeader() {
     const showHeaderAnim = gsap.from(header, {
         yPercent: -100,
         paused: true,
-        duration: 0.3
+        duration: 0.4,
+        delay: 0.3,
     }).progress(1);
 
     ScrollTrigger.create({
-        scroller: scroller,
+        //scroller: scroller,
         start: 'top top',
         end: 99999,
         onUpdate: (self) => {
             self.direction === -1 ? showHeaderAnim.play() : showHeaderAnim.reverse();
-            console.log(self.direction);
         }
     });
 
@@ -82,13 +71,12 @@ function initShowHideHeader() {
 }
 
 function initScript() {
-    initSmoothScroll();
+    //initSmoothScroll();
     initShowHideHeader();
 }
 
 function updateLoco() {
     scroll.update();
-    console.log('loco scroll updated');
 }
 
 window.onresize = updateLoco;

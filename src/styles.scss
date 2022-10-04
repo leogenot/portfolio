@@ -4,6 +4,10 @@
 @import "scss/_root-variables";
 @import "scss/base";
 
+body {
+    background-color: var(--bg-color);
+}
+
 .menu-container {
     position: fixed;
     top: 0;
@@ -12,7 +16,7 @@
 }
 
 .menu {
-    background: red;
+    background: white;
     height: 5.6rem;
     margin: 1.6rem;
     padding: 2rem;
