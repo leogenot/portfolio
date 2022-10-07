@@ -1,18 +1,5 @@
 <template>
-    <div class="app">
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
-                <Header />
-                <!-- <hero-header /> -->
-                <!-- <div class="app__content">
-                    <Sidebar class="app__nav" />
-                    <main class="app__inner-content">
-                        <router-view />
-                    </main>
-                </div> -->
-            </div>
-        </div>
-    </div>
+    <the-base />
 </template>
 <script>
 import {
@@ -26,16 +13,12 @@ import {
 import { gsap, ScrollTrigger, ScrollSmoother } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-import Sidebar from "@/templates/layout/Sidebar.vue";
-import Header from "@/templates/layout/Header.vue";
-import HeroHeader from "@/templates/Hero/HeroHeader.vue";
+import TheBase from "@/templates/layout/TheBase.vue";
 
 export default defineComponent({
     name: "App",
     components: {
-        Sidebar,
-        Header,
-        HeroHeader,
+        TheBase,
     },
     setup() {
         const smoother = ref(null);
