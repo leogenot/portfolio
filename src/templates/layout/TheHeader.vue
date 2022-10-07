@@ -51,14 +51,24 @@
                 >
             </div>
         </div>
+        <button-primary
+            label="Page précédente"
+            iconBefore="chevron-left"
+            color="light"
+        />
     </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 
+import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
+
 export default defineComponent({
     name: "TheHeader",
+    components: {
+        ButtonPrimary,
+    },
 });
 </script>
 
