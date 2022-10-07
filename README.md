@@ -1,15 +1,30 @@
-# Installation
-``` 
-npm install
-npm run start
+# web dev etc example Vue 3 project
+
+This is an example project which uses Vue 3 features. 
+
+This is meant as a demo for some of Vue 3 features. This is not a great example of a real world app, but of what is hopefully easy to follow and understand how to use Vue 3 with this sample code.
+
+For more visit https://webdevetc.com/blog/vue-3-guide-with-example-code-snippets/
+
+To see this app live visit https://webdevetc-vue3-example-starter.netlify.app/
+
+## Installation
+```
+yarn
 ```
 
-And then go to `localhost:1234`
+### For vue 3 development (with hot reloading)
+```
+yarn serve
+```
 
-# Handling changes
-If you need to change things such as navbar for example, you will find all the reusable component througout the pages in the folder : `/src/partials`.
-Change the html here and modifiy the css in the good file in `/src/scss`.
-That is almost everything you need to know.
+### To build / minify for production
+```
+yarn build
+```
 
-If you have run : `npm run start`, parcels has an excellent hot reload except if you are on another page than index.html. There is a bug with parcels that requires you to manually refresh the page when you are not working on `index.html`.
+### Run tests
+```
+yarn test
+```
 
