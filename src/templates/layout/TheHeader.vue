@@ -26,9 +26,11 @@
         </nav>
         <!-- #site-navigation -->
         <div class="c-header__right">
-            <div class="c-header__right-contact wiggle">Contact</div>
+            <!-- <div class="c-header__right-contact wiggle">Contact</div> -->
 
-            <div class="c-header__right-contact-menu">
+            <contact-menu />
+
+            <!--             <div class="c-header__right-contact-menu">
                 <a
                     href="mailto: leogenot@gmail.com"
                     class="c-header__right-contact-menu-item"
@@ -49,25 +51,20 @@
                     class="c-header__right-contact-menu-item"
                     >Github</a
                 >
-            </div>
+            </div> -->
         </div>
-        <button-primary
-            label="Page précédente"
-            iconBefore="chevron-left"
-            color="light"
-        />
     </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 
-import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
+import ContactMenu from "@/templates/components/Contact/ContactMenu.vue";
 
 export default defineComponent({
     name: "TheHeader",
     components: {
-        ButtonPrimary,
+        ContactMenu,
     },
 });
 </script>
@@ -102,90 +99,6 @@ export default defineComponent({
             width: 100%;
             text-align: right;
         }
-        &:hover .c-header__right-contact-menu-item {
-            transform: translateY(0);
-            opacity: 1;
-            transition: 0.4s $custom-ease opacity, 0.6s $custom-ease transform;
-
-            @include stagger-delay(4, 0.2);
-        }
-        &-contact {
-            font-size: 1.5rem;
-
-            &-menu {
-                display: flex;
-                position: absolute;
-                z-index: 1;
-                width: 13em;
-                right: 0;
-                padding-top: 2em;
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -webkit-flex-direction: column;
-                -ms-flex-direction: column;
-                flex-direction: column;
-                -webkit-box-align: end;
-                -webkit-align-items: flex-end;
-                -ms-flex-align: end;
-                align-items: flex-end;
-                gap: 1.5rem;
-
-                &-item {
-                    cursor: ne-resize;
-
-                    opacity: 0;
-                    transform: translateY(-2rem);
-
-                    @include stagger-delay(4, 0.1);
-                    transition: 0.3s $custom-ease opacity,
-                        1s $custom-ease transform;
-                }
-            }
-        }
-    }
-}
-
-.wiggle {
-    animation: wiggle 5s infinite;
-}
-
-@keyframes wiggle {
-    0% {
-        transform: rotate(0);
-    }
-
-    90% {
-        transform: rotate(0);
-    }
-
-    92% {
-        transform: rotate(5deg);
-    }
-
-    94% {
-        transform: rotate(-5deg);
-    }
-
-    100% {
-        transform: rotate(0);
-    }
-}
-
-.wiggle:hover {
-    animation: wigglecontinue 0.3s infinite;
-}
-
-@keyframes wigglecontinue {
-    0% {
-        transform: rotate(-5deg);
-    }
-
-    50% {
-        transform: rotate(5deg);
-    }
-
-    100% {
-        transform: rotate(-5deg);
     }
 }
 </style>
