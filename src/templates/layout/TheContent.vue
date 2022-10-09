@@ -1,18 +1,19 @@
 <template>
-    <div class="l-footer"></div>
+    <div class="l-content"></div>
 </template>
 
 <script>
 import { defineComponent, computed } from "vue";
 
 export default defineComponent({
-    name: "TheFooter",
+    name: "TheContent",
     components: {},
     setup() {},
 });
 </script>
 
 <style lang="scss">
-.l-footer {
+.l-content {
+    height: 200vh;
 }
 </style>

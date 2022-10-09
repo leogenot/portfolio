@@ -1,9 +1,10 @@
 <template>
-    <div class="l-base">
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
-                <the-loader />
-                <the-header />
+    <the-loader />
+    <the-header />
+    <div id="smooth-content">
+        <div class="l-base">
+            <div id="smooth-wrapper">
+                <the-content />
                 <the-footer />
             </div>
         </div>
@@ -15,14 +16,16 @@ import { defineComponent, computed } from "vue";
 
 import TheLoader from "@/templates/layout/TheLoader.vue";
 import TheHeader from "@/templates/layout/TheHeader.vue";
+import TheContent from "@/templates/layout/TheContent.vue";
 import TheFooter from "@/templates/layout/TheFooter.vue";
 
 export default defineComponent({
     name: "TheBase",
     components: {
-        TheHeader,
-        TheFooter,
         TheLoader,
+        TheHeader,
+        TheContent,
+        TheFooter,
     },
     setup() {},
 });

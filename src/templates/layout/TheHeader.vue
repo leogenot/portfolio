@@ -24,34 +24,8 @@
                 </ul>
             </div>
         </nav>
-        <!-- #site-navigation -->
         <div class="c-header__right">
-            <!-- <div class="c-header__right-contact wiggle">Contact</div> -->
-
             <contact-menu />
-
-            <!--             <div class="c-header__right-contact-menu">
-                <a
-                    href="mailto: leogenot@gmail.com"
-                    class="c-header__right-contact-menu-item"
-                    >leogenot@gmail.com</a
-                ><a
-                    href="https://instagram.com/garethughes"
-                    target="_blank"
-                    class="c-header__right-contact-menu-item"
-                    >Instagram</a
-                ><a
-                    href="https://www.linkedin.com/in/gareth-hughes-9480153a/"
-                    target="_blank"
-                    class="c-header__right-contact-menu-item"
-                    >LinkedIn</a
-                ><a
-                    href="https://twitter.com/bygarethughes"
-                    target="_blank"
-                    class="c-header__right-contact-menu-item"
-                    >Github</a
-                >
-            </div> -->
         </div>
     </div>
 </template>
@@ -95,6 +69,9 @@ export default defineComponent({
         }
     }
     &__right {
+        position: fixed;
+        top: 0;
+        right: 0;
         @media (max-width: 600px) {
             width: 100%;
             text-align: right;
