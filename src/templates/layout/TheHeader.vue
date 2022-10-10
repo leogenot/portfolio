@@ -50,7 +50,7 @@ export default defineComponent({
     @include transform(translateY(var(--header-translateY)));
     @include transition(0.3s $custom-ease transform);
     z-index: 99;
-
+    height: fit-content;
     display: flex;
     justify-content: space-between;
     flex-direction: row;

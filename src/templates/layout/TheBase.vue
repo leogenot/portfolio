@@ -90,6 +90,6 @@ export default defineComponent({
 .l-main {
 }
 #smooth-content {
-    background-color: beige;
+    background-color: black;
 }
 </style>
