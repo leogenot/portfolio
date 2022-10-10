@@ -35,6 +35,10 @@ export default defineComponent({
     color: var(--tag-font-color, white);
     background-color: var(--tag-bg-color, transparent);
     border: 1px solid var(--tag-border-color, white);
+
+    //background: rgba(237, 237, 237, 0.4);
+    //-webkit-backdrop-filter: blur(45px);
+
     @include radius(5em);
     margin-top: 15px;
     margin-left: 15px;
