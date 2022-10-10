@@ -45,10 +45,15 @@ export default defineComponent({
 
 <style lang="scss">
 .c-header {
+    --header-translateY: 0%;
+    @include full-screen-dom(fixed, 0rem, 0rem, 0rem, 0rem);
+    @include transform(translateY(var(--header-translateY)));
+    @include transition(0.3s $custom-ease transform);
+    z-index: 99;
+
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: center;
 
     @media (max-width: 600px) {
         flex-direction: column-reverse;
@@ -69,9 +74,6 @@ export default defineComponent({
         }
     }
     &__right {
-        position: fixed;
-        top: 0;
-        right: 0;
         @media (max-width: 600px) {
             width: 100%;
             text-align: right;
