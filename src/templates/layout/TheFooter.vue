@@ -1,6 +1,6 @@
 <template>
     footer
-    <div class="l-footer | l-container -full" v-view="(e) => runAnimation(e)">
+    <div class="l-footer | l-container -full">
         <div class="l-footer__tagline">
             <headline text="hello world" :min="1" :max="999" />
         </div>
@@ -57,15 +57,7 @@ export default defineComponent({
     components: {
         Headline,
     },
-    setup() {
-        const runAnimation = (e) => {
-            console.log("v-view", e);
-        };
-
-        return {
-            runAnimation,
-        };
-    },
+    setup() {},
 });
 </script>
 

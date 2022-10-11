@@ -71,7 +71,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import store from "@/store";
 import emitter from "@/services/emitter";
-
+import { LOADER } from "@/constants";
 //import isEqual from "lodash/isEqual";
 
 const roundPercent = Symbol("roundPercent");
@@ -111,13 +111,16 @@ const viewClass = new (class View {
         }, 1000);
 
         store.watch(
-            () => [store.getters["loader/isLoading"], store.getters["scroll/isScrollReady"]],
+            () => store.getters["loader/isLoading"],
             (loading) => {
-                if (!loading[0] && loading[1]) {
-                    this.enable();
-                    viewClass.refreshTriggers();
-                } else {
+                if (loading) {
                     this.disable();
+                } else {
+                    // TMP Fix
+                    // TODO: Find why all trigger arent register before being enabled
+                    setTimeout(() => {
+                        this.enable();
+                    }, LOADER.toCover * 1000);
                 }
             }
         );
@@ -189,24 +192,20 @@ const viewClass = new (class View {
     updateItem(id, state) {
         // console.log(`${this.constructor.name}:updateItem`, id, state);
         const item = this.items[id];
-
         this.pos = {
             top: window.pageYOffset,
             right: window.pageXOffset + this.W.w,
             bottom: window.pageYOffset + this.W.h,
             left: window.pageXOffset,
         };
-
         if (!this.isEnabled || typeof item === "undefined") {
             return;
         }
-
         // if (item.cb) {
         //     item.cb(state);
         // }
 
         const inType = this.getInType(item);
-
         // Callback
         if (item.cb) {
             item.cb({
@@ -234,6 +233,7 @@ const viewClass = new (class View {
             });
         }
 
+        console.log("::4")
         // Toggle reveal `visible` class
         if (state.isActive) {
             item.$el.classList.add(this.classname.visible);

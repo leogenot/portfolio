@@ -36,11 +36,11 @@ export default defineComponent({
             ];
         });
 
-        const exampleFuntion = (e) => {
+        const exampleFunction = (e) => {
             console.log(e.percent.top);
         };
 
-        return { tags, exampleFuntion };
+        return { tags, exampleFunction };
     },
 });
 </script>

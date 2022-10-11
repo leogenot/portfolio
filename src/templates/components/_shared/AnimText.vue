@@ -1,10 +1,5 @@
 <template>
-    <div
-        v-if="copy"
-        :key="copy"
-        class="c-anim-text"
-        v-view.once="(e) => runAnimation(e)"
-    >
+    <div v-if="copy" :key="copy" class="c-anim-text">
         <anim-text-split v-bind="$props" :isVisible="isVisible" />
     </div>
 </template>
@@ -44,9 +39,9 @@ export default defineComponent({
         }; */
 
         const runAnimation = (e) => {
-            e.state.progress > 0.02 && !isVisible.value
+            /* e.state.progress > 0.02 && !isVisible.value
                 ? (isVisible.value = true)
-                : null;
+                : null; */
         };
 
         return { copy, isVisible, runAnimation };
