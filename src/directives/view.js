@@ -233,7 +233,6 @@ const viewClass = new (class View {
             });
         }
 
-        console.log("::4")
         // Toggle reveal `visible` class
         if (state.isActive) {
             item.$el.classList.add(this.classname.visible);

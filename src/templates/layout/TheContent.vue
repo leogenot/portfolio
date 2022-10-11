@@ -1,10 +1,6 @@
 <template>
     <div class="l-content">
-        <list-tag
-            v-if="tags && tags.length > 0"
-            :tags="tags"
-            v-view="(e) => exampleFunction(e)"
-        />
+        <list-tag v-if="tags && tags.length > 0" :tags="tags" />
     </div>
 </template>
 
@@ -36,11 +32,7 @@ export default defineComponent({
             ];
         });
 
-        const exampleFunction = (e) => {
-            console.log(e.percent.top);
-        };
-
-        return { tags, exampleFunction };
+        return { tags };
     },
 });
 </script>
