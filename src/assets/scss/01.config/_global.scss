@@ -1,0 +1,86 @@
+/*=======================================
+=             Directories               =
+=======================================*/
+
+$base-dir: "/static";
+
+$directories: (
+    font: "#{$base-dir}/fonts/",
+    img: "#{$base-dir}/images/",
+    icon: "#{$base-dir}/icons/",
+);
+
+/*=======================================
+=                Colors                 =
+=======================================*/
+
+$colors: (
+    black: #000000,
+    white: #ffffff,
+    smoke: #f5f3f1,
+    grey: #989693,
+    beige: #e8e3dd,
+    blue: #1acbff,
+    dark-blue: #00ade0,
+    yellow: #fdec5a,
+    gold: #a39d79,
+);
+
+$font-color: var(--color-black);
+
+$selection-bg: var(--color-dark-blue);
+$selection-color: var(--color-black);
+
+/*=======================================
+=              Typography               =
+=======================================*/
+
+$font-families: (
+    heading: (
+        "Everett",
+        "Helvetica Neue",
+        Arial,
+        sans-serif,
+    ),
+    body: (
+        "Gellix",
+        "Helvetica Neue",
+        Arial,
+        sans-serif,
+    ),
+);
+
+$font-sizes: (
+    small: 1.2rem,
+    regular: 1.6rem,
+    medium: 1.8rem,
+    large: 2.5rem,
+    xl: 4.5rem,
+    2xl: 6rem,
+);
+
+$font-faces: (
+    // <name> <filename> <font-weight> <font-style>,
+    "Everett" "Everett-Regular" 400 normal,
+    "Gellix" "Gellix-Regular" 400 normal,
+    "Gellix" "Gellix-SemiBold" 600 normal
+);
+
+// <html> Font-size
+$root-fs: 10px;
+
+// <body> font styles
+$dflt-font-family: var(--ff-body);
+$dflt-font-size: var(--fs-regular);
+$dflt-line-height: 1.4;
+
+/*=======================================
+=            Miscellaneous              =
+=======================================*/
+
+$ease: cubic-bezier(0.42, 0, 0.21, 1);
+$shadow: 0.5rem 0 4rem rgba(black, 0.08);
+
+// Borders
+$border-width: 1px;
+$border-color: var(--color-beige);

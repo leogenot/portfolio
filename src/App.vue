@@ -10,6 +10,8 @@ import {
     nextTick,
 } from "vue";
 
+import "@/assets/scss/global.scss";
+
 import TheBase from "@/templates/layout/TheBase.vue";
 
 export default defineComponent({

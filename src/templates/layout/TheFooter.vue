@@ -1,5 +1,11 @@
 <template>
-    <footer class="l-footer l-footer-container">
+    footer
+    <div class="l-footer | l-container -full" v-view="(e) => runAnimation(e)">
+        <div class="l-footer__tagline">
+            <headline text="hello world" :min="1" :max="999" />
+        </div>
+    </div>
+    <!--     <footer class="l-footer l-footer-container">
         <div class="l-footer-slogan">
             <p>
                 Let's keep
@@ -38,44 +44,50 @@
                 >Youtube.</a
             >
         </div>
-    </footer>
+    </footer> -->
 </template>
 
 <script>
 import { defineComponent, computed } from "vue";
 
+import Headline from "@/templates/components/_shared/Headline.vue";
+
 export default defineComponent({
     name: "TheFooter",
-    components: {},
-    setup() {},
+    components: {
+        Headline,
+    },
+    setup() {
+        const runAnimation = (e) => {
+            console.log("v-view", e);
+        };
+
+        return {
+            runAnimation,
+        };
+    },
 });
 </script>
 
 <style lang="scss">
 .l-footer {
-    &-container {
-        position: sticky;
-        bottom: 0;
-        display: grid;
-        grid-auto-flow: column;
-        align-items: center;
-        justify-content: space-between;
-        height: var(--header-height);
-        font-size: 0.8em;
-        color: hsl(var(--background) / 0.6);
-    }
-    &-links,
-    &-slogan {
-        display: grid;
-        grid-auto-flow: column;
-        gap: 1em;
-    }
-    &-slogan {
-    }
-    &-link {
-        color: hsl(var(--background));
-        &:hover {
-            animation: var(--hover);
+    color: var(--color-beige);
+    background-color: var(--color-black);
+
+    &__tagline {
+        overflow: hidden;
+
+        .o-headline {
+            --headline-translate: 7%;
+
+            @include min(sm) {
+                --headline-translate: 18%;
+            }
+        }
+
+        :deep(.c-anim-text) {
+            // Spacing here to make sure reveal append on mobile portrait
+            padding-top: var(--footer-spacing-bottom);
         }
     }
 }

@@ -1,3 +1,7 @@
+/*=================================
+=            Shortcuts            =
+=================================*/
+
 @mixin transition($transition) {
     -webkit-transition: $transition;
     -moz-transition: $transition;
@@ -51,10 +55,4 @@
     -ms-filter: blur($spread);
     -moz-filter: blur($spread);
     -webkit-filter: blur($spread);
-}
-
-@mixin reset-list {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
 }
