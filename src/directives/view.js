@@ -120,7 +120,7 @@ const viewClass = new (class View {
                     // TODO: Find why all trigger arent register before being enabled
                     setTimeout(() => {
                         this.enable();
-                    }, LOADER.toCover * 1000);
+                    }, LOADER.toCover * 1);
                 }
             }
         );

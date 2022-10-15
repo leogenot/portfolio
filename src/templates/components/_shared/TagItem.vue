@@ -40,9 +40,6 @@ export default defineComponent({
     //-webkit-backdrop-filter: blur(45px);
 
     @include radius(5em);
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: -15px;
     padding: 0 15px 0 15px;
 
     white-space: nowrap;

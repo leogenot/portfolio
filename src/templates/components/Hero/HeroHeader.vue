@@ -1,22 +1,32 @@
 <template>
-    <div class="c-hero">
-        <div class="c-hero__inner">
-            <span class="c-hero__divider"></span>
-            <div class="c-hero__expand c-hero__expand-row-1">
-                <span>houston</span>
-                <p>Professional and exclusive</p>
+    <section class="c-hero-header" v-view.progress>
+        <div class="c-hero-header__blur"></div>
+        <div class="c-hero-header__content">
+            <div class="c-hero-header__top">
+                <div class="c-hero-header__top-left">
+                    <div class="c-hero-header__top-left-txt">
+                        <h1 class="c-hero-header__top-left-txt-title">
+                            Léo —
+                            <br />
+                            Genot.
+                        </h1>
+                    </div>
+                </div>
             </div>
-            <div class="c-hero__expand c-hero__expand-row-2">
-                <p>
-                    techno sound identity for your
-                    <span class="img"></span> &nbsp;brand
-                </p>
-            </div>
-            <div class="c-hero__expand c-hero__expand-row-3">
-                <p>Sound is our life</p>
+            <div class="c-hero-header__bottom">
+                <div class="c-hero-header__bottom-right">
+                    <div class="c-hero-header__bottom-right-block">
+                        <div class="c-hero-header__bottom-right-txt">
+                            <h1 class="c-hero-header__bottom-right-txt-title">
+                                Creative <br />
+                                Developer.
+                            </h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 <script>
 import {
@@ -27,84 +37,115 @@ import {
     nextTick,
 } from "vue";
 
+import TagItem from "@/templates/components/_shared/TagItem.vue";
+import Headline from "@/templates/components/_shared/Headline.vue";
+
 export default defineComponent({
-    name: "App",
-    components: {},
+    components: {
+        TagItem,
+        Headline,
+    },
     setup() {},
 });
 </script>
 
 <style lang="scss">
-.c-hero {
-    &__expand {
+.c-hero-header {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 5% 40px;
+    @include min(md) {
+        padding: 100px 5% 40px;
+    }
+    overflow: hidden;
+
+    &__blur {
+        position: absolute;
+        width: 50vh;
+        height: 50vh;
+        border-radius: 100%;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%)
+            scale(calc(1 * calc(var(--view-progress) * 2)));
+        background-color: #d87628;
+        overflow: hidden;
+        @include blur(calc(var(--view-progress) * 50px));
+    }
+    &__content {
         position: relative;
-        width: 100%;
-        padding: 2.4rem 0;
         display: flex;
-        flex-direction: column;
-
-        &-row-1 {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-top: 2.2rem;
-            transition: all 0.02s ease;
-            & span {
-                text-transform: uppercase;
-                padding: 0.25rem 0.6rem 0.15rem 0.6rem;
-                font-size: 0.8rem;
-                border: 1px solid #000;
-                border-radius: 0.8rem;
-                margin-right: 1rem;
-            }
-        }
-        &-row-2 {
-            & .img {
-                position: relative;
-                top: 0.8rem;
-                left: 0.4rem;
-                display: inline-block;
-                width: 100px;
-                height: 60px;
-                line-height: 60px;
-                border-radius: 1rem;
-                background: url("https://images.unsplash.com/photo-1623578963865-6bb7b0629a54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80")
-                    no-repeat 50% 50%;
-                background-size: cover;
-            }
-        }
-        &-row-3 {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-            transition: all 0.02s ease;
+        width: 100%;
+        height: 100%;
+        @include min(md) {
+            height: 80vh;
         }
 
-        &-row-1,
-        &-row-2 {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            transition: all 0.02s ease;
-        }
-
-        & p {
-            margin: 0.2rem 0;
-            font-family: "Canopee", sans-serif;
-            font-size: 3.2rem;
-            line-height: 70px;
+        justify-content: center;
+        z-index: 1;
+        font-size: var(--fs-large);
+        color: var(--color-pistachio);
+        @include min(md) {
+            font-size: var(--fs-2xl);
         }
     }
+    &__top {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        right: auto;
+        bottom: auto;
+        width: -webkit-fill-available;
+        &-left {
+            width: 70%;
+            position: relative;
+            flex-direction: column;
+            &-txt {
+                overflow: hidden;
+                padding-top: 1em;
 
-    &__expand &__divider {
-        position: relative;
-        width: 0%;
-        height: 1px;
-        background: rgba(0, 0, 0, 0.1);
-        transition: all 0.02s ease;
+                text-transform: uppercase;
+                &-title {
+                }
+            }
+        }
+    }
+    &__bottom {
+        text-align: right;
+        position: absolute;
+        left: 0%;
+        top: auto;
+        right: 0%;
+        bottom: 0%;
+        display: flex;
+        width: -webkit-fill-available;
+        justify-content: space-between;
+
+        justify-content: flex-end;
+        &-right {
+            position: relative;
+            display: flex;
+            width: 100%;
+            padding-left: 0%;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+
+            &-txt {
+                width: 100%;
+                overflow: hidden;
+                padding-top: 1em;
+                padding-bottom: 1em;
+
+                text-transform: uppercase;
+                &-title {
+                }
+            }
+            &-block {
+                width: 100%;
+                flex-direction: column;
+            }
+        }
     }
 }
 </style>

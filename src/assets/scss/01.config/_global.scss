@@ -24,6 +24,8 @@ $colors: (
     dark-blue: #00ade0,
     yellow: #fdec5a,
     gold: #a39d79,
+    pistachio: #dedb7b,
+    green: #00524e,
 );
 
 $font-color: var(--color-black);
@@ -37,13 +39,13 @@ $selection-color: var(--color-black);
 
 $font-families: (
     heading: (
-        "Everett",
+        "Durer",
         "Helvetica Neue",
         Arial,
         sans-serif,
     ),
     body: (
-        "Gellix",
+        "NeutralFace",
         "Helvetica Neue",
         Arial,
         sans-serif,
@@ -51,19 +53,19 @@ $font-families: (
 );
 
 $font-sizes: (
-    small: 1.2rem,
-    regular: 1.6rem,
-    medium: 1.8rem,
-    large: 2.5rem,
-    xl: 4.5rem,
-    2xl: 6rem,
+    small: 1.2em,
+    regular: 1.6em,
+    medium: 1.8em,
+    large: 2.5em,
+    xl: 4.5em,
+    2xl: 6em,
 );
 
 $font-faces: (
     // <name> <filename> <font-weight> <font-style>,
-    "Everett" "Everett-Regular" 400 normal,
-    "Gellix" "Gellix-Regular" 400 normal,
-    "Gellix" "Gellix-SemiBold" 600 normal
+    "Durer" "Durer" 400 normal,
+    "NeutralFace" "NeutralFaceRegular" 400 normal,
+    "NeutralFace" "NeutralFaceBold" 600 normal
 );
 
 // <html> Font-size

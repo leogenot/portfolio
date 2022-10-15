@@ -1,14 +1,30 @@
 <template>
     <div v-if="text" class="o-headline">
-        <span class="o-headline__text | t-main-h1" ref="headline" :style="styleObj">
-            <span v-if="!isReady" class="o-headline__text__beforeAnim" v-html="text"></span>
-            <anim-text v-else :copy="text" whichSplit="words" :options="{ duration: 1.4 }" />
+        <span
+            class="o-headline__text | t-main-h1"
+            ref="headline"
+            :style="styleObj"
+        >
+            <span
+                v-if="!isReady"
+                class="o-headline__text__beforeAnim"
+                v-html="text"
+            ></span>
+            <div v-else v-html="text" />
         </span>
     </div>
 </template>
 
 <script>
-import { defineComponent, onMounted, onUnmounted, computed, reactive, ref, nextTick } from "vue";
+import {
+    defineComponent,
+    onMounted,
+    onUnmounted,
+    computed,
+    reactive,
+    ref,
+    nextTick,
+} from "vue";
 
 import AnimText from "@/templates/components/_shared/AnimText.vue";
 
@@ -64,7 +80,13 @@ export default defineComponent({
         const max = computed(() => (props.max * h.documentFontSize) / 10);
 
         const stretchedFontSize = computed(() =>
-            Math.min(Math.max(min.value, (h.availableWidth / h.baseWidth) * h.baseFontSize), max.value)
+            Math.min(
+                Math.max(
+                    min.value,
+                    (h.availableWidth / h.baseWidth) * h.baseFontSize
+                ),
+                max.value
+            )
         );
 
         // METHODS
@@ -78,7 +100,8 @@ export default defineComponent({
 
         const applyStyles = () => {
             styleObj.fontSize = `${stretchedFontSize.value}px`;
-            styleObj.whiteSpace = h.stretchedFontSize === min.value ? "normal" : "nowrap";
+            styleObj.whiteSpace =
+                h.stretchedFontSize === min.value ? "normal" : "nowrap";
             isReady.value = true;
         };
 
@@ -119,6 +142,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .o-headline {
+    --headline-color: var(--color-white);
+    --font-family: var(--fs-body);
+    font-family: var(--font-family);
+    color: var(--headline-color);
     width: 100%;
     text-align: center;
     overflow: hidden;

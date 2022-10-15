@@ -5,14 +5,14 @@
         :style="`--app-height: ${appHeight}px;`"
     >
         <the-loader></the-loader>
-        <the-header></the-header>
+        <!-- <the-header></the-header> -->
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
                 <main class="l-main" ref="main">
                     <the-content />
                 </main>
-                <the-footer></the-footer>
+                <!-- <the-footer></the-footer> -->
             </div>
         </div>
     </div>
@@ -228,6 +228,6 @@ export default defineComponent({
 .l-main {
 }
 #smooth-content {
-    background-color: grey;
+    background-color: var(--color-green);
 }
 </style>

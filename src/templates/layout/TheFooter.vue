@@ -2,7 +2,7 @@
     footer
     <div class="l-footer | l-container -full">
         <div class="l-footer__tagline">
-            <headline text="hello world" :min="1" :max="999" />
+            <headline text="Let's keep" :min="1" :max="999" />
         </div>
     </div>
     <!--     <footer class="l-footer l-footer-container">
