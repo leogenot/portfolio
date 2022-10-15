@@ -1,7 +1,9 @@
 <template>
     <div class="l-content" ref="content">
         <hero-header />
-        <section class="section"></section>
+        <section class="section">
+            <button-primary label="Contact" color="light" />
+        </section>
         <!--         <list-tag v-if="tags && tags.length > 0" :tags="tags" class="section" />
         <headline text="Léo" :min="1" :max="999" />
         <headline text="Genot" :min="1" :max="999" />
@@ -23,14 +25,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 import HeroHeader from "@/templates/components/Hero/HeroHeader.vue";
 import ListTag from "@/templates/components/ListTag.vue";
-import Headline from "@/templates/components/_shared/Headline.vue";
+import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
 
 export default defineComponent({
     name: "TheContent",
     components: {
         HeroHeader,
         ListTag,
-        Headline,
+        ButtonPrimary,
     },
     setup() {
         const content = ref();
