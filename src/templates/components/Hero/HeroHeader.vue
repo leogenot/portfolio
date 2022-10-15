@@ -68,7 +68,7 @@ export default defineComponent({
         right: 50%;
         transform: translate(50%, -50%)
             scale(calc(1 * calc(var(--view-progress) * 2)));
-        background-color: #d87628;
+        background-color: var(--color-orange);
         overflow: hidden;
         @include blur(calc(var(--view-progress) * 50px));
     }
