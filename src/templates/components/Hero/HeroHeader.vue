@@ -1,7 +1,7 @@
 <template>
     <section class="c-hero-header" v-view.progress>
-        <div class="c-hero-header__blur"></div>
         <div class="c-hero-header__content">
+            <div class="c-hero-header__blur"></div>
             <div class="c-hero-header__top">
                 <div class="c-hero-header__top-left">
                     <div class="c-hero-header__top-left-txt">
@@ -26,6 +26,82 @@
                 </div>
             </div>
         </div>
+        <div class="c-hero-header__more">
+            <div class="c-hero-header__more-toprow">
+                <div class="c-hero-header__more-toprow-left">
+                    <h2 class="c-hero-header__more-toprow-left-txt">
+                        My latest works
+                        <br />
+                        @2022
+                    </h2>
+                </div>
+                <div class="c-hero-header__more-toprow-right">
+                    <p>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        Web developer based in Paris, France. Dynamic and open
+                        minded to create impact and help brands achieve their
+                        goals. With a focus on digital development and design
+                        direction.
+                    </p>
+                </div>
+            </div>
+            <div class="c-hero-header__more-bottomrow">
+                <div class="c-hero-header__more-bottomrow-left">
+                    <button-primary
+                        label=""
+                        :iconBefore="'scroll-down'"
+                        class="c-hero-header__btn arrow"
+                    />
+                </div>
+                <div class="c-hero-header__more-bottomrow-middle">
+                    <button-primary
+                        label="Github"
+                        color="light"
+                        :iconAfter="'external'"
+                        class="c-hero-header__btn"
+                        href="https://www.github.com/leogenot"
+                        target="_blank"
+                        tag="a"
+                    />
+                    <button-primary
+                        label="Instagram"
+                        color="light"
+                        :iconAfter="'external'"
+                        class="c-hero-header__btn"
+                        href="https://www.instagram.com/leogenot"
+                        target="_blank"
+                        tag="a"
+                    />
+                    <button-primary
+                        label="Youtube"
+                        color="light"
+                        :iconAfter="'external'"
+                        class="c-hero-header__btn"
+                        href="https://www.youtube.com/channel/UCTy2DFV4djNni5fskteT16Q"
+                        target="_blank"
+                        tag="a"
+                    />
+                    <button-primary
+                        label="LinkedIn"
+                        color="light"
+                        :iconAfter="'external'"
+                        class="c-hero-header__btn"
+                        href="https://www.linkedin.com/in/leo-genot-88580b176/"
+                        target="_blank"
+                        tag="a"
+                    />
+                </div>
+                <div class="c-hero-header__more-bottomrow-right">
+                    <button-primary
+                        label="email"
+                        color="light"
+                        class="c-hero-header__btn email"
+                        href="mailto:leogenot@gmail.com"
+                        tag="a"
+                    />
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 <script>
@@ -38,12 +114,13 @@ import {
 } from "vue";
 
 import TagItem from "@/templates/components/_shared/TagItem.vue";
-import Headline from "@/templates/components/_shared/Headline.vue";
+
+import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
 
 export default defineComponent({
     components: {
         TagItem,
-        Headline,
+        ButtonPrimary,
     },
     setup() {},
 });
@@ -52,8 +129,8 @@ export default defineComponent({
 <style lang="scss">
 .c-hero-header {
     width: 100%;
-    height: 100vh;
-    padding: 50px 5% 40px;
+    height: 300vh;
+    padding: 0px 5% 40px;
     @include min(md) {
         padding: 100px 5% 40px;
     }
@@ -67,7 +144,7 @@ export default defineComponent({
         top: 50%;
         right: 50%;
         transform: translate(50%, -50%)
-            scale(calc(1 * calc(var(--view-progress) * 2)));
+            scale(calc(2 * calc(var(--view-progress) * 2)));
         background-color: var(--color-orange);
         overflow: hidden;
         @include blur(calc(var(--view-progress) * 50px));
@@ -76,7 +153,7 @@ export default defineComponent({
         position: relative;
         display: flex;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         @include min(md) {
             height: 80vh;
         }
@@ -84,6 +161,7 @@ export default defineComponent({
         justify-content: center;
         z-index: 1;
         font-size: var(--fs-large);
+        font-family: var(--ff-heading);
         color: var(--color-pistachio);
         @include min(md) {
             font-size: var(--fs-2xl);
@@ -144,6 +222,93 @@ export default defineComponent({
             &-block {
                 width: 100%;
                 flex-direction: column;
+            }
+        }
+    }
+
+    &__more {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        --border-color: var(--color-orange);
+        @include border(top);
+        margin-top: 5rem;
+        @include min(md) {
+            gap: 10rem;
+            margin-top: 15rem;
+        }
+        &-toprow {
+            margin-top: 5rem;
+            display: flex;
+            flex-flow: row wrap;
+            color: var(--color-pistachio);
+            font-size: var(--fs-small);
+            @include min(md) {
+                font-size: var(--fs-regular);
+            }
+            @include min(md) {
+                flex-flow: row nowrap;
+            }
+            &-left {
+                width: -webkit-fill-available;
+
+                &-txt {
+                }
+            }
+            &-right {
+            }
+        }
+        &-bottomrow {
+            display: flex;
+
+            justify-content: space-between;
+            flex-flow: row wrap;
+            @include min(md) {
+                flex-flow: row nowrap;
+            }
+            &-left {
+                @include min(md) {
+                    text-align: center;
+                    height: fit-content;
+                }
+            }
+            &-middle {
+                @include min(md) {
+                    text-align: center;
+                    height: fit-content;
+                }
+            }
+            &-right {
+                @include min(md) {
+                    text-align: center;
+                    height: fit-content;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        &.arrow {
+            --btn-border-color: transparent;
+            --btn-hover-display: none;
+            cursor: default;
+            margin-bottom: 5rem;
+        }
+
+        @include max(md) {
+            &:not(.arrow) {
+                --btn-txt-size: var(--fs-xsmall);
+                margin: 0.5rem;
+            }
+            &.email {
+                margin-top: 3rem;
+            }
+        }
+        @include min(md) {
+            &:not(.arrow),
+            &:not(.email) {
+                margin-right: 1.5rem;
+                margin-bottom: 1.5rem;
             }
         }
     }

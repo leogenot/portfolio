@@ -135,12 +135,12 @@ export default defineComponent({
 
     --btn-txt-color: var(--color-pistachio);
     --btn-txt-size: var(--fs-regular);
-    --btn-padding-v: 0.6em;
-    --btn-padding-h: 1.3em;
+    --btn-padding-v: 0.5em;
+    --btn-padding-h: 1em;
     --btn-padding: var(--btn-padding-v) var(--btn-padding-h);
 
     --btn-bg-display: block;
-    --btn-bg-color: var(--color-orange);
+    --btn-bg-color: transparent;
     --btn-border-color: var(--color-pistachio);
     --btn-hover-display: block;
     --btn-hover-color: var(--color-orange);
@@ -155,6 +155,8 @@ export default defineComponent({
     padding: var(--btn-padding);
     transition: all 0.3s ease;
     cursor: pointer;
+
+    text-decoration: none;
 
     //--- Background ---//
     &__bg {
