@@ -149,17 +149,6 @@ export default defineComponent({
 
     --svg-spacing: 0.5em;
 
-    /*display: inline-flex;
-    align-items: center;
-    gap: var(--svg-spacing);
-    padding: 0.5em 1em;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    color: var(--btn-color);
-    background: var(--btn-bg-color);
-    border-radius: 0.5em;*/
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
