@@ -129,7 +129,7 @@ export default defineComponent({
 <style lang="scss">
 .c-hero-header {
     width: 100%;
-    height: 300vh;
+    height: fit-content;
     padding: 0px 5% 40px;
     @include min(md) {
         padding: 100px 5% 40px;
@@ -140,6 +140,10 @@ export default defineComponent({
         position: absolute;
         width: 50vh;
         height: 50vh;
+        @include min(md) {
+            width: 30vh;
+            height: 30vh;
+        }
         border-radius: 100%;
         top: 50%;
         right: 50%;
@@ -230,9 +234,10 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         gap: 5rem;
-        --border-color: var(--color-orange);
+        --border-color: var(--color-pistachio);
         @include border(top);
         margin-top: 5rem;
+        z-index: 3;
         @include min(md) {
             gap: 10rem;
             margin-top: 15rem;
