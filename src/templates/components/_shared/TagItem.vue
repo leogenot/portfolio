@@ -33,20 +33,24 @@ export default defineComponent({
 .c-tag {
     display: inline-block;
     color: var(--tag-font-color, white);
-    background-color: var(--tag-bg-color, transparent);
-    border: 1px solid var(--tag-border-color, white);
 
-    //background: rgba(237, 237, 237, 0.4);
-    //-webkit-backdrop-filter: blur(45px);
-
-    @include radius(5em);
-    padding: 0 15px 0 15px;
-
+    padding: 5px 11px;
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    background-color: rgba(199, 199, 199, 0.25);
+    border-radius: 100rem;
     white-space: nowrap;
     text-transform: uppercase;
-    letter-spacing: -0.03em;
-    font-size: 26px;
-    line-height: 42px;
+    font-size: var(--fs-xsmall);
+    line-height: 1.5em;
+
+    cursor: default;
+
+    @include min(md) {
+        font-size: var(--fs-regular);
+        line-height: 42px;
+        padding: 0 15px 0 15px;
+    }
 
     &.-colored {
         --tag-bg-color: red;

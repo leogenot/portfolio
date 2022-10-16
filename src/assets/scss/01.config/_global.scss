@@ -31,8 +31,8 @@ $colors: (
 
 $font-color: var(--color-black);
 
-$selection-bg: var(--color-dark-blue);
-$selection-color: var(--color-black);
+$selection-bg: var(--color-orange);
+$selection-color: var(--color-white);
 
 /*=======================================
 =              Typography               =
@@ -54,6 +54,7 @@ $font-families: (
 );
 
 $font-sizes: (
+    xsmall: 1em,
     small: 1.2em,
     regular: 1.6em,
     medium: 1.8em,
