@@ -12,7 +12,7 @@
                 <main class="l-main" ref="main">
                     <the-content />
                 </main>
-                <!-- <the-footer></the-footer> -->
+                <the-footer></the-footer>
             </div>
         </div>
     </div>
