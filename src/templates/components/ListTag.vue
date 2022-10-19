@@ -27,8 +27,9 @@ export default defineComponent({
     @include reset-list;
     display: flex;
     align-items: flex-start;
+    flex-direction: var(--list-tag-direction, row);
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.3rem;
     line-height: 1;
 }
 </style>

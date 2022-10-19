@@ -12,7 +12,6 @@
 // State
 const state = {
     data: false,
-    layout: "dark",
     component: false,
 };
 
@@ -23,8 +22,8 @@ const getters = {
 
 // Actions
 const actions = {
-    open(store, { component, data, layout }) {
-        store.commit("openModal", { component, data, layout });
+    open(store, { component, data }) {
+        store.commit("openModal", { component, data });
     },
     close(store) {
         store.commit("closeModal", false);

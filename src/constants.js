@@ -10,10 +10,7 @@ export const STORE_MODULES = Object.freeze([
     "animations"
 ]);
 
-export const MODAL_COMPONENTS = Object.freeze({
-    EMBED: "ModalEmbed",
-    VIDEO: "ModalVideo",
-});
+export const MODAL_COMPONENTS = Object.freeze({ Project: "ProjectModal" });
 
 // Loader settings
 export const LOADER = Object.freeze({

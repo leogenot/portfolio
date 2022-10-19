@@ -31,6 +31,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .c-tag {
+    --tag-font-size: var(--fs-xsmall);
     display: inline-block;
     color: var(--tag-font-color, white);
 
@@ -41,16 +42,10 @@ export default defineComponent({
     border-radius: 100rem;
     white-space: nowrap;
     text-transform: uppercase;
-    font-size: var(--fs-xsmall);
+    font-size: var(--tag-font-size);
     line-height: 1.5em;
 
     cursor: default;
-
-    @include min(md) {
-        font-size: var(--fs-regular);
-        line-height: 42px;
-        padding: 0 15px 0 15px;
-    }
 
     &.-colored {
         --tag-bg-color: red;

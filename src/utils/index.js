@@ -22,5 +22,6 @@ export {
     resizeEnd,
     userContext,
     typeCheck,
-    reducedMotion
+    reducedMotion,
+
 };

@@ -13,6 +13,7 @@
                     <the-content />
                 </main>
                 <the-footer></the-footer>
+                <the-modal />
             </div>
         </div>
     </div>
@@ -38,6 +39,7 @@ import TheLoader from "@/templates/layout/TheLoader.vue";
 import TheHeader from "@/templates/layout/TheHeader.vue";
 import TheContent from "@/templates/layout/TheContent.vue";
 import TheFooter from "@/templates/layout/TheFooter.vue";
+import TheModal from "@/templates/layout/TheModal.vue";
 
 export default defineComponent({
     name: "TheBase",
@@ -46,6 +48,7 @@ export default defineComponent({
         TheHeader,
         TheContent,
         TheFooter,
+        TheModal,
     },
     setup() {
         const store = useStore();
