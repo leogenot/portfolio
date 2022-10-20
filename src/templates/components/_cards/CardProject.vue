@@ -994,7 +994,10 @@ export default defineComponent({
     <section class="c-card-project" ref="container">
         <div class="c-card-project__sidebar">
             <div class="c-card-project__sidebar-content" ref="fixed_text">
-                <h2 class="c-card-project__sidebar-content-title">
+                <h2
+                    class="c-card-project__sidebar-content-title"
+                    @click="openModal(project)"
+                >
                     {{ project.title }}
                 </h2>
                 <p class="c-card-project__sidebar-content-description">
@@ -1005,7 +1008,7 @@ export default defineComponent({
                 </div>
             </div>
         </div>
-        <div class="c-card-project__image">
+        <div class="c-card-project__image" @click="openModal(project)">
             <div class="c-card-project__image-inner">
                 <img
                     data-speed="auto"
@@ -1018,6 +1021,7 @@ export default defineComponent({
             label=""
             :iconBefore="'external'"
             class="c-card-project__btn external wiggle"
+            @click="openModal(project)"
         />
     </section>
 </template>
@@ -1163,6 +1167,7 @@ export default defineComponent({
                 @include min(md) {
                     font-size: var(--fs-2xl);
                 }
+                cursor: pointer;
             }
             &-description {
                 font-size: var(--fs-small);
@@ -1180,6 +1185,7 @@ export default defineComponent({
         width: 50%;
         //aspect-ratio: 4/5;
 
+        cursor: pointer;
         &-inner {
             width: 100%;
             height: 100%;
