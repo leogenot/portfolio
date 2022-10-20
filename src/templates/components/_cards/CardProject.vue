@@ -769,7 +769,7 @@ main {
 }
 </style>
  -->
-
+<!-- 
 <template>
     <div class="c-card-project" @click="openModal(project)">
         <div class="c-card-project__preview">
@@ -944,6 +944,252 @@ export default defineComponent({
                     }
                 }
             }
+        }
+    }
+}
+
+.wiggle {
+    animation: wiggle 5s infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0);
+    }
+
+    90% {
+        transform: rotate(0);
+    }
+
+    92% {
+        transform: rotate(5deg);
+    }
+
+    94% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes wigglecontinue {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+</style>
+ -->
+
+<template>
+    <section class="c-card-project" ref="container">
+        <div class="c-card-project__sidebar">
+            <div class="c-card-project__sidebar-content" ref="fixed_text">
+                <h2 class="c-card-project__sidebar-content-title">
+                    {{ project.title }}
+                </h2>
+                <p class="c-card-project__sidebar-content-description">
+                    {{ project.description }}
+                </p>
+                <div class="c-card-project__sidebar-content-tags">
+                    <ListTag :tags="project.tags" />
+                </div>
+            </div>
+        </div>
+        <div class="c-card-project__image">
+            <div class="c-card-project__image-inner">
+                <img
+                    data-speed="auto"
+                    class="c-card-project__image-inner-img"
+                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                />
+            </div>
+        </div>
+        <button-primary
+            label=""
+            :iconBefore="'external'"
+            class="c-card-project__btn external wiggle"
+        />
+    </section>
+</template>
+
+<script>
+import {
+    defineComponent,
+    computed,
+    ref,
+    toRef,
+    onMounted,
+    onBeforeUnmount,
+    watch,
+    nextTick,
+} from "vue";
+import { useStore } from "vuex";
+import { MODAL_COMPONENTS } from "@/constants";
+import { gsap, ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
+
+import ObjectAsset from "@/templates/objects/ObjectAsset.vue";
+import ListTag from "@/templates/components/ListTag.vue";
+
+import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
+
+export default defineComponent({
+    name: "CardProject",
+    components: {
+        ListTag,
+        ObjectAsset,
+        ButtonPrimary,
+    },
+    props: {
+        project: {
+            type: Object,
+            required: false,
+        },
+    },
+
+    setup(props) {
+        const store = useStore();
+        const project = toRef(props, "project");
+
+        function openModal(data) {
+            store.dispatch("modal/open", {
+                component: MODAL_COMPONENTS.Project,
+                data,
+            });
+        }
+
+        const container = ref();
+        const fixed_text = ref();
+        const containerHeight = computed(() => {
+            return container.value.offsetHeight;
+        });
+        const contentHeight = computed(() => {
+            return fixed_text.value.offsetHeight;
+        });
+
+        const refreshCount = computed(
+            () => store.state.animations.refreshCount
+        );
+        let triggers = null;
+        const isMobile = computed(() => {
+            return store.state.userContext.isMobile;
+        });
+
+        function setScrollTrigger() {
+            console.log("container: ", containerHeight.value);
+            console.log("content: ", contentHeight.value);
+            triggers = ScrollTrigger.create({
+                trigger: container.value,
+                start: `-${contentHeight.value}`,
+                //end: `+${container.value.clientHeight - window.innerHeight / 4}`,
+                end: `+${containerHeight.value}`,
+                //end: "bottom top",
+                pin: fixed_text.value,
+                scrub: true,
+            });
+            refreshTriggers();
+        }
+
+        function onResize() {
+            !isMobile.value ? ScrollTrigger.refresh() : null;
+        }
+
+        function killTrigger() {
+            triggers ? (triggers.kill(), (triggers = null)) : null;
+        }
+
+        function refreshTriggers() {
+            ScrollTrigger.refresh();
+            triggers.refresh();
+        }
+
+        watch(
+            () => refreshCount.value,
+            (val) => {
+                nextTick(() => {
+                    refreshTriggers();
+                });
+            }
+        );
+
+        onMounted(() => {
+            ScrollTrigger.refresh();
+            window.addEventListener("resize", onResize);
+            setScrollTrigger();
+        });
+        onBeforeUnmount(() => {
+            window.removeEventListener("resize", onResize);
+            killTrigger();
+        });
+
+        return {
+            project,
+            openModal,
+            container,
+            fixed_text,
+            ScrollTrigger,
+        };
+    },
+});
+</script>
+
+<style lang="scss">
+.c-card-project {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+    &__sidebar {
+        width: 50%;
+        &-content {
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            &-title {
+                font-size: var(--fs-large);
+                font-family: var(--ff-heading);
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__image {
+        width: 50%;
+        //aspect-ratio: 4/5;
+
+        &-inner {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            &-img {
+                height: 110%;
+                width: auto;
+
+                max-width: auto;
+                max-height: 110%;
+                object-fit: cover;
+            }
+        }
+    }
+    &__btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 2rem;
+        &.external {
+            --btn-border-color: transparent;
+            --btn-hover-display: none;
         }
     }
 }

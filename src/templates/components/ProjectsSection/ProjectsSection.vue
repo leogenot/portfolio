@@ -2,16 +2,24 @@
     <div class="c-projects | l-container -default">
         <div class="c-projects__list">
             <!-- <team-card :data="item" v-for="(item, i) in data.team" :key="`gallery-img-${i}`" /> -->
-            <!-- <card-project
-                v-for="(project, i) in projects"
-                :key="`project-${i}`"
-                :project="project"
-            /> -->
             <card-project
                 v-for="(project, i) in projects"
                 :key="`project-${i}`"
                 :project="project"
             />
+
+            <!-- <section id="red" class="panel red align-top" ref="red">
+                <p ref="red_content">
+                    <code>start: "top center"</code> pins this element when the
+                    <strong>top</strong> of the red element hits the
+                    <strong>center</strong> of the viewport, and remains pinned
+                    for 200px because its <code>end</code> is defined as
+                    <code>"+=200"</code>
+                </p>
+                <img
+                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                />
+            </section> -->
         </div>
     </div>
 </template>
@@ -23,7 +31,10 @@ import {
     ref,
     onMounted,
     onBeforeUnmount,
+    watch,
+    nextTick,
 } from "vue";
+import { useStore } from "vuex";
 import { gsap, ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +53,7 @@ export default defineComponent({
         const projects = ref({
             project1: {
                 title: "Sagacia",
-                description: "This is a description",
+                description: "project 1 description",
                 image: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
@@ -55,7 +66,8 @@ export default defineComponent({
             },
             project2: {
                 title: "Deep Drawing",
-                description: "This is a description",
+                description:
+                    "If you need to know how much space the actual displayed content takes up, including padding but not including the border, margins, or scrollbars, you want to use",
                 image: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
@@ -113,6 +125,7 @@ export default defineComponent({
                 ],
             },
         });
+
         return { projects };
     },
 });
@@ -121,7 +134,7 @@ export default defineComponent({
 <style lang="scss">
 .c-projects {
     //height: 100vh;
-    &__list {
+    /*&__list {
         margin-top: 5rem;
         //display: flex;
         //flex-direction: column;
@@ -142,6 +155,6 @@ export default defineComponent({
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(4, 1fr);
         }
-    }
+    }*/
 }
 </style>
