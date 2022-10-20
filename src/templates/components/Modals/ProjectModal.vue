@@ -3,6 +3,13 @@
         class="c-project-modal | l-grid"
         :class="{ 'c-project-modal--active': isOpen }"
     >
+        <button-primary
+            class="c-project-modal-btn"
+            label="Go back"
+            color="light"
+            iconAfter="close"
+            @click="close"
+        />
         {{ data }}
     </div>
 </template>
@@ -17,13 +24,16 @@ import {
     onBeforeUnmount,
 } from "vue";
 import { useStore } from "vuex";
-
 import { gsap, CustomEase } from "gsap/all";
 gsap.registerPlugin(CustomEase);
 
+import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
+
 export default defineComponent({
     name: "ProjectModal",
-    components: {},
+    components: {
+        ButtonPrimary,
+    },
     props: {
         data: {
             type: Object,

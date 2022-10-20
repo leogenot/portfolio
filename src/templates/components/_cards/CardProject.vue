@@ -771,7 +771,7 @@ main {
  -->
 
 <template>
-    <div class="c-card-project" @click="openModal">
+    <div class="c-card-project" @click="openModal(project)">
         <div class="c-card-project__preview">
             <div class="c-card-project__preview-image">
                 <img
@@ -865,21 +865,21 @@ export default defineComponent({
 .c-card-project {
     width: 100%;
     background-color: black;
-    @include radius(3rem);
-    @include min(md) {
-        @include radius(5rem);
-    }
 
     aspect-ratio: 1/1;
     cursor: pointer;
-
+    transition: all 0.8s ease;
     &:hover {
         .c-card-project__preview-image-img {
             transform: scale(1.03);
         }
+        .c-card-project__preview-image {
+            @include radius(8rem);
+        }
         .wiggle {
             animation: wigglecontinue 0.3s 1;
         }
+        @include radius(8rem);
     }
 
     &__preview {
@@ -889,10 +889,8 @@ export default defineComponent({
             width: 100%;
             height: 100%;
             overflow: hidden;
-            @include radius(3rem);
-            @include min(md) {
-                @include radius(5rem);
-            }
+
+            transition: all 0.8s ease;
 
             &-img {
                 width: 100%;
@@ -902,7 +900,7 @@ export default defineComponent({
                 max-height: 100%;
                 object-fit: cover;
 
-                transition: transform 0.8s ease;
+                transition: all 0.8s ease;
             }
         }
         &-title {

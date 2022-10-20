@@ -87,7 +87,7 @@ export default defineComponent({
     @include full-screen-dom();
     z-index: 102;
     background: var(--color-green);
-    opacity: 0;
+    //opacity: 0;
     pointer-events: none;
 
     display: flex;
@@ -96,14 +96,15 @@ export default defineComponent({
 
     overflow-y: auto;
     //overflow-x: hidden;
-
-    transition: opacity 0.4s linear;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 1s $custom-ease;
 
     width: 100%;
     height: 80%;
 
     &.is-open {
-        opacity: 1;
+        //opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         pointer-events: auto;
     }
 }
