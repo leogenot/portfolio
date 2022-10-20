@@ -1159,7 +1159,19 @@ export default defineComponent({
             &-title {
                 font-size: var(--fs-large);
                 font-family: var(--ff-heading);
-                text-transform: uppercase;
+                color: var(--color-pistachio);
+                @include min(md) {
+                    font-size: var(--fs-2xl);
+                }
+            }
+            &-description {
+                font-size: var(--fs-small);
+                @include min(md) {
+                    font-size: var(--fs-regular);
+                }
+                font-family: var(--ff-body);
+                color: var(--color-pistachio);
+                padding-right: 1em;
             }
         }
     }
