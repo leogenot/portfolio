@@ -4,7 +4,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path"
 
 
-/* export default defineConfig({
+export default defineConfig({
     resolve: { alias: { '@': '/src' } },
     plugins: [
         vue(),
@@ -24,16 +24,16 @@ import path from "path"
     },
     publicPath: process.env.NODE_ENV === "production" ? "/leogenot.github.io/" : "/",
 
-}) */
+})
 
-export default defineConfig(({ command, mode }) => {
+/*export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), "");
 
     return {
         base: command === "serve" ? "" : "/dist/",
         build: {
             manifest: true,
-            outDir: "./dist/",
+            outDir: "../dist/",
             rollupOptions: {
                 input: {
                     app: "./src/main.js",
@@ -74,3 +74,4 @@ export default defineConfig(({ command, mode }) => {
         },
     };
 });
+ */
