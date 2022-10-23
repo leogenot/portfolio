@@ -31,11 +31,13 @@
         "@vitejs/plugin-vue": "^3.1.2",
         "@vue/compiler-sfc": "^3.0.0",
         "@vue/test-utils": "v2.0.0-beta.6",
+        "gh-pages": "^4.0.0",
         "sass": "^1.55.0",
         "sass-loader": "^10.0.3",
         "typescript": "~3.9.3",
         "vite": "^3.1.6",
         "vite-plugin-svg-icons": "^2.0.1",
         "vue-jest": "^5.0.0-0"
-    }
+    },
+    "homepage": "https://leogenot.github.io/"
 }
