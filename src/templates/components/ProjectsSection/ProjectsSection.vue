@@ -148,9 +148,9 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/static/images/studimac/1.png",
-                    2: "/static/images/studimac/2.png",
-                    3: "/static/images/studimac/3.png",
+                    1: "/static/images/studimac/1.jpg",
+                    2: "/static/images/studimac/2.jpg",
+                    3: "/static/images/studimac/3.jpg",
                     4: "/static/images/studimac/4.png",
                 },
             },
