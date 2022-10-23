@@ -9,7 +9,7 @@
         "build": "vite build",
         "lint": "vite lint",
         "predeploy": "yarn run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@types/faker": "^5.1.2",
