@@ -232,7 +232,7 @@ export default defineComponent({
 
 <style lang="scss">
 .c-projects {
-    height: -webkit-fill-available;
+    //height: -webkit-fill-available;
     padding: 0px 5% 40px;
     @include min(md) {
         padding: 100px 5% 40px;
