@@ -106,6 +106,7 @@ export default defineComponent({
                     smooth: 2, // seconds it takes to "catch up" to native scroll position
                     effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
                     ignoreMobileResize: true,
+                    smoothTouch: 0.5,
                     onUpdate: (self) => {
                         checkIfUserScrollTop(
                             self?.scrollTrigger?.progress < 0.01

@@ -10,7 +10,10 @@
             iconAfter="close"
             @click="close"
         />
-        {{ data }}
+        {{ data.title }}
+        {{ data.description }}
+        {{ data.image.url }}
+        {{ data.tags }}
     </div>
 </template>
 

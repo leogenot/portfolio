@@ -1,25 +1,30 @@
 <template>
     <div class="c-projects | l-container -default">
-        <div class="c-projects__list">
-            <!-- <team-card :data="item" v-for="(item, i) in data.team" :key="`gallery-img-${i}`" /> -->
-            <card-project
-                v-for="(project, i) in projects"
-                :key="`project-${i}`"
-                :project="project"
-            />
-
-            <!-- <section id="red" class="panel red align-top" ref="red">
-                <p ref="red_content">
-                    <code>start: "top center"</code> pins this element when the
-                    <strong>top</strong> of the red element hits the
-                    <strong>center</strong> of the viewport, and remains pinned
-                    for 200px because its <code>end</code> is defined as
-                    <code>"+=200"</code>
-                </p>
-                <img
-                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-                />
-            </section> -->
+        <div class="c-projects__list |">
+            <div class="c-project">
+                <div class="c-project-left">
+                    <h4 class="c-project-left-nb-project">
+                        {{ count_projects }}/
+                    </h4>
+                </div>
+                <div class="c-project-middle">
+                    <card-project
+                        v-for="(project, i) in projects"
+                        :key="`project-${i}`"
+                        :project="project"
+                    />
+                    <!-- <div class="mobile">
+                        <card-project-mobile
+                            v-for="(project, i) in projects"
+                            :key="`project-${i}`"
+                            :project="project"
+                        />
+                    </div> -->
+                </div>
+                <div class="c-project-right">
+                    <h4 class="c-project-right-work">My work</h4>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -41,6 +46,7 @@ gsap.registerPlugin(ScrollTrigger);
 import ListTag from "@/templates/components/ListTag.vue";
 import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
 import CardProject from "@/templates/components/_cards/CardProject.vue";
+import CardProjectMobile from "@/templates/components/_cards/CardProjectMobile.vue";
 
 export default defineComponent({
     name: "ProjectsSections",
@@ -48,14 +54,15 @@ export default defineComponent({
         ListTag,
         ButtonPrimary,
         CardProject,
+        CardProjectMobile,
     },
     setup() {
         const projects = ref({
             project1: {
                 title: "Sagacia",
-                description: "project 1 description",
-                image: {
-                    url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+                description: "Website made during my internship at MamboMambo",
+                cover: {
+                    url: "/static/images/sagacia/0.png",
                 },
                 tags: [
                     {
@@ -63,12 +70,14 @@ export default defineComponent({
                         label: "DEV",
                     },
                 ],
+                images: {
+                    image1: "/static/images/",
+                },
             },
             project2: {
                 title: "Deep Drawing",
-                description:
-                    "If you need to know how much space the actual displayed content takes up, including padding but not including the border, margins, or scrollbars, you want to use",
-                image: {
+                description: "Random sketches generation using AI",
+                cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
                 tags: [
@@ -81,80 +90,174 @@ export default defineComponent({
                         label: "DEV",
                     },
                 ],
+                images: {
+                    image1: "/static/images/",
+                },
             },
             project4: {
                 title: "BNP",
-                description: "This is a description",
-                image: {
+                description: "Loan simulation tool",
+                cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
                 tags: [
                     {
                         highlighted: false,
-                        label: "hello",
+                        label: "UI/UX",
                     },
                     {
                         highlighted: true,
-                        label: "goodbye",
-                    },
-                    {
-                        highlighted: false,
-                        label: "reset",
+                        label: "DEV",
                     },
                 ],
+                images: {
+                    image1: "/static/images/",
+                },
             },
             project5: {
                 title: "Studimac",
-                description: "This is a description",
-                image: {
+                description: "Organization app for students",
+                cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
                 tags: [
                     {
                         highlighted: false,
-                        label: "hello",
-                    },
-                    {
-                        highlighted: true,
-                        label: "goodbye",
-                    },
-                    {
-                        highlighted: false,
-                        label: "reset",
+                        label: "UI/UX",
                     },
                 ],
+                images: {
+                    image1: "/static/images/",
+                },
+            },
+            project6: {
+                title: "VisuTerre",
+                description: "3D terrain visualization",
+                cover: {
+                    url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+                },
+                tags: [
+                    {
+                        highlighted: false,
+                        label: "DEV",
+                    },
+                ],
+                images: {
+                    image1: "/static/images/",
+                },
             },
         });
 
-        return { projects };
+        const count_projects = computed(() => {
+            return Object.keys(projects.value).length;
+        });
+
+        ////////////////////////////////
+        //       START IMAGE TIMELINE
+        ////////////////////////////////
+        const imageContainer = ref();
+
+        const imageAnimationTimeline = gsap.timeline({
+            paused: true,
+        });
+
+        function initImageTimeline() {
+            imageAnimationTimeline.to(imageContainer.value, {
+                "--crop-path-btm-left": "100%",
+                "--crop-path-btm-right": "100%",
+                duration: 1,
+                ease: "customEase",
+            });
+
+            //imageAnimationTimeline.play();
+        }
+
+        function playAnimation() {
+            imageAnimationTimeline.play();
+        }
+        function stopAnimation() {
+            imageAnimationTimeline.reverse();
+        }
+        ////////////////////////////////
+        //       END IMAGE TIMELINE
+        ////////////////////////////////
+
+        onMounted(() => {
+            initImageTimeline();
+        });
+
+        onBeforeUnmount(() => {
+            imageAnimationTimeline ? imageAnimationTimeline.kill() : null;
+        });
+
+        return {
+            projects,
+            count_projects,
+            imageContainer,
+            imageAnimationTimeline,
+            initImageTimeline,
+            playAnimation,
+            stopAnimation,
+        };
     },
 });
 </script>
 
 <style lang="scss">
 .c-projects {
-    //height: 100vh;
-    /*&__list {
-        margin-top: 5rem;
-        //display: flex;
-        //flex-direction: column;
-        //gap: 5rem;
+    height: -webkit-fill-available;
+}
 
-        display: grid;
+.desktop {
+    @include max(md) {
+        display: none;
+    }
+}
+.mobile {
+    @include min(md) {
+        display: none;
+    }
+}
 
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        gap: 5rem;
+.c-project {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    margin-top: 5rem;
+    font-size: var(--fs-small);
+    font-family: var(--ff-body);
+    color: var(--color-pistachio);
+
+    @include min(md) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 2.5rem;
+    }
+    &-left {
+        &-nb-project {
+        }
+    }
+    &-middle {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-row-start: 2;
+        margin-top: 65px;
+
         @include min(md) {
-            margin-top: 10rem;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
+            grid-column-start: 3;
+            grid-column-end: 10;
+            grid-row-start: 1;
+            margin-top: 0;
         }
-        @include min(3xl) {
-            margin-top: 10rem;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+    }
+    &-right {
+        grid-column-start: 3;
+        grid-column-end: 7;
+        @include min(md) {
+            grid-column-start: 11;
+            grid-column-end: 13;
         }
-    }*/
+        &-work {
+        }
+    }
 }
 </style>
