@@ -1,5 +1,5 @@
 <template>
-    <div class="c-projects | l-container -default">
+    <div class="c-projects">
         <div class="c-projects__list |">
             <div class="c-project">
                 <div class="c-project-left">
@@ -71,12 +71,20 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    image1: "/static/images/",
+                    1: "/static/images/sagacia/1.png",
+                    2: "/static/images/sagacia/2.png",
+                    3: "/static/images/sagacia/3.png",
+                },
+
+                link: {
+                    url: "https://mambomambo.ca",
+                    label: "Visit MamboMambo",
                 },
             },
             project2: {
                 title: "Deep Drawing",
-                description: "Random sketches generation using AI",
+                description:
+                    "Web tool to generate random sketches using tensorflowjs (adapted from python to work as a standalone web page).",
                 cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
@@ -91,12 +99,20 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    image1: "/static/images/",
+                    1: "/static/images/generative_deep_learning/1.png",
+                    2: "/static/images/generative_deep_learning/2.png",
+                    3: "/static/images/generative_deep_learning/3.png",
+                    4: "/static/images/generative_deep_learning/sample_6500.png",
+                },
+                link: {
+                    url: "https://leogenot.github.io/DeepDrawing/",
+                    label: "Try it out",
                 },
             },
             project4: {
                 title: "BNP",
-                description: "Loan simulation tool",
+                description:
+                    "Web tool to help customer and advisors see the benefits of loan insurances.",
                 cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
@@ -111,12 +127,16 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    image1: "/static/images/",
+                    1: "/static/images/bnp/1.png",
+                    2: "/static/images/bnp/2.png",
+                    3: "/static/images/bnp/3.png",
+                    4: "/static/images/bnp/4.png",
                 },
             },
             project5: {
                 title: "Studimac",
-                description: "Organization app for students",
+                description:
+                    "Help student stay organized when working from home or not, centralize all their favorite school apps",
                 cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
@@ -127,12 +147,15 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    image1: "/static/images/",
+                    1: "/static/images/studimac/1.png",
+                    2: "/static/images/studimac/2.png",
+                    3: "/static/images/studimac/3.png",
+                    4: "/static/images/studimac/4.png",
                 },
             },
             project6: {
                 title: "VisuTerre",
-                description: "3D terrain visualization",
+                description: "3D terrain visualizer made in OpenGL and C++",
                 cover: {
                     url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
                 },
@@ -143,7 +166,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    image1: "/static/images/",
+                    1: "/static/images/visuterre/1.png",
+                    2: "/static/images/visuterre/2.png",
+                    3: "/static/images/visuterre/3.png",
+                    4: "/static/images/visuterre/4.png",
                 },
             },
         });
@@ -206,6 +232,10 @@ export default defineComponent({
 <style lang="scss">
 .c-projects {
     height: -webkit-fill-available;
+    padding: 0px 5% 40px;
+    @include min(md) {
+        padding: 100px 5% 40px;
+    }
 }
 
 .desktop {

@@ -268,6 +268,7 @@ export default defineComponent({
         class="c-card-project | desktop"
         @mouseenter="playAnimation"
         @mouseleave="stopAnimation"
+        @click="openModal(project)"
     >
         <div class="c-card-project-project">
             <h4 class="c-card-project-project-title">{{ project.title }}</h4>
@@ -285,7 +286,7 @@ export default defineComponent({
         </div>
     </div>
 
-    <div class="c-card-project | mobile">
+    <div class="c-card-project | mobile" @click="openModal(project)">
         <div class="c-card-project-project">
             <h4 class="c-card-project-project-title">{{ project.title }}</h4>
             <div class="c-card-project-project-image">
@@ -420,7 +421,7 @@ export default defineComponent({
         &-title {
             font-size: var(--fs-regular);
             @include min(lg) {
-                font-size: var(--fs-xl);
+                font-size: var(--fs-2xl);
             }
             @include min(md) {
                 font-size: var(--fs-large);

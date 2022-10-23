@@ -100,7 +100,7 @@ export default defineComponent({
     transition: clip-path 1s $custom-ease;
 
     width: 100%;
-    height: 80%;
+    height: 100%;
 
     &.is-open {
         //opacity: 1;
