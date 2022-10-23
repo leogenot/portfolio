@@ -1,0 +1,46 @@
+{
+  "static/fonts/Durer.woff2": {
+    "file": "assets/Durer.b9dd97c8.woff2",
+    "src": "static/fonts/Durer.woff2"
+  },
+  "static/fonts/NeutralFaceRegular.woff2": {
+    "file": "assets/NeutralFaceRegular.0e7c97aa.woff2",
+    "src": "static/fonts/NeutralFaceRegular.woff2"
+  },
+  "static/fonts/NeutralFaceBold.woff2": {
+    "file": "assets/NeutralFaceBold.11a0a89f.woff2",
+    "src": "static/fonts/NeutralFaceBold.woff2"
+  },
+  "static/fonts/NeutralFaceRegular.woff": {
+    "file": "assets/NeutralFaceRegular.b61bf0a6.woff",
+    "src": "static/fonts/NeutralFaceRegular.woff"
+  },
+  "static/fonts/NeutralFaceBold.woff": {
+    "file": "assets/NeutralFaceBold.c76799de.woff",
+    "src": "static/fonts/NeutralFaceBold.woff"
+  },
+  "static/fonts/Durer.woff": {
+    "file": "assets/Durer.71488c9a.woff",
+    "src": "static/fonts/Durer.woff"
+  },
+  "src/main.js": {
+    "file": "assets/app.070ee613.js",
+    "src": "src/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main.01af932f.css"
+    ],
+    "assets": [
+      "assets/Durer.b9dd97c8.woff2",
+      "assets/Durer.71488c9a.woff",
+      "assets/NeutralFaceRegular.0e7c97aa.woff2",
+      "assets/NeutralFaceRegular.b61bf0a6.woff",
+      "assets/NeutralFaceBold.11a0a89f.woff2",
+      "assets/NeutralFaceBold.c76799de.woff"
+    ]
+  },
+  "src/main.css": {
+    "file": "assets/main.01af932f.css",
+    "src": "src/main.css"
+  }
+}

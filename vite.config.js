@@ -33,7 +33,7 @@ export default defineConfig(({ command, mode }) => {
         base: command === "serve" ? "" : "/dist/",
         build: {
             manifest: true,
-            outDir: "../public_html/dist/",
+            outDir: "./dist/",
             rollupOptions: {
                 input: {
                     app: "./src/main.js",
