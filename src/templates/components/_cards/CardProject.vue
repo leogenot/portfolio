@@ -420,11 +420,8 @@ export default defineComponent({
     &-project {
         &-title {
             font-size: var(--fs-regular);
-            @include min(lg) {
-                font-size: var(--fs-2xl);
-            }
             @include min(md) {
-                font-size: var(--fs-large);
+                font-size: var(--fs-xl);
             }
         }
         &-image {

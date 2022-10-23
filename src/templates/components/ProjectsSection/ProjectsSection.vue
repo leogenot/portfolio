@@ -60,7 +60,8 @@ export default defineComponent({
         const projects = ref({
             project1: {
                 title: "Sagacia",
-                description: "Website made during my internship at MamboMambo",
+                description:
+                    "Website made during my internship at MamboMambo. In collaboration with Aurélien Vigne. Animation first website using GSAP.",
                 cover: {
                     url: "/static/images/sagacia/0.png",
                 },
