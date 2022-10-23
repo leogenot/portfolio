@@ -151,6 +151,7 @@ export default defineComponent({
             scale(calc(2 * calc(var(--view-progress) * 2)));
         background-color: var(--color-orange);
         overflow: hidden;
+        will-change: filter;
         @include blur(calc(var(--view-progress) * 50px));
     }
     &__content {
