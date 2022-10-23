@@ -22,5 +22,6 @@ export default defineConfig({
         },
         devSourcemap: true,
     },
+    publicPath: process.env.NODE_ENV === "production" ? "/leogenot.github.io/" : "/",
 
 })
