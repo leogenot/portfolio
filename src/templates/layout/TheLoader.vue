@@ -1,5 +1,7 @@
 <template>
-    <div :class="className" ref="loader"></div>
+    <div :class="className" ref="loader">
+        <div class="c-loader__blur" ref="blur"></div>
+    </div>
 </template>
 <script>
 import { defineComponent, computed, ref, watch, onBeforeUnmount } from "vue";
@@ -18,6 +20,7 @@ export default defineComponent({
 
         const isLoading = ref(true);
         const loader = ref();
+        const blur = ref();
         const coverDelay = ref(LOADER.cover * 1000);
 
         const isFirstLoad = computed(() => store.getters["loader/isFirstLoad"]);
@@ -71,8 +74,11 @@ export default defineComponent({
                     ease: "customEase",
 
                     duration: LOADER.firstLoad,
-                    "--crop-path-bottom-left": "0%",
-                    "--crop-path-bottom-right": "0%",
+                    //"--crop-path-bottom-left": "0%",
+                    //"--crop-path-bottom-right": "0%",
+                    "--blur-height": "30vh",
+                    "--blur-width": "30vh",
+                    "--bg-opacity": 0,
                 },
                 "start"
             );
@@ -88,13 +94,20 @@ export default defineComponent({
 
                 "--crop-path-bottom-left": "100%",
                 "--crop-path-bottom-right": "100%",
+
+                "--blur-height": "950vh",
+                "--blur-width": "950vh",
             });
 
             gsap.to(loader.value, {
                 ease: "customEase",
                 duration: LOADER.toCover,
-                "--crop-path-top-left": "0%",
-                "--crop-path-top-right": "0%",
+                //"--crop-path-top-left": "0%",
+                //"--crop-path-top-right": "0%",
+
+                "--blur-height": "30vh",
+                "--blur-width": "30vh",
+                "--bg-opacity": 0,
 
                 onComplete: () => {
                     // Dispatch load start and load end after `coverDelay` for minimum animation time
@@ -145,7 +158,7 @@ export default defineComponent({
             gsap.killTweensOf(loader.value);
         });
 
-        return { className, loader };
+        return { className, loader, blur };
     },
 });
 </script>
@@ -158,7 +171,10 @@ export default defineComponent({
     --crop-path-bottom-left: 100%;
     --crop-path-bottom-right: 100%;
 
-    --loader-color: red;
+    --blur-height: 100%;
+    --blur-width: 100%;
+    --bg-opacity: 1;
+    --loader-color: var(--color-green);
     z-index: -100; // Avoid having the loader displayed on every hotReload
     position: fixed;
     top: 0;
@@ -167,14 +183,14 @@ export default defineComponent({
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 1;
+    opacity: var(--bg-opacity);
 
-    clip-path: polygon(
+    /*   clip-path: polygon(
         0 var(--crop-path-top-left),
         100% var(--crop-path-top-right),
         100% var(--crop-path-bottom-right),
         0% var(--crop-path-bottom-left)
-    );
+    ); */
 
     &:after {
         content: " ";
@@ -197,6 +213,25 @@ export default defineComponent({
         &.is-loading {
             z-index: 98;
         }
+    }
+    &__blur {
+        z-index: 990;
+        position: absolute;
+        width: var(--blur-width);
+        height: var(--blur-height);
+        @include min(md) {
+            //--blur-width: 30vh;
+            //--blur-height: 30vh;
+        }
+        border-radius: 100%;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        //  scale(calc(2 * calc(var(--view-progress) * 2)));
+        background-color: var(--color-orange);
+        overflow: hidden;
+        will-change: filter;
+        @include blur(50px);
     }
 }
 </style>
