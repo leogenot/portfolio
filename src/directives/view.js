@@ -72,7 +72,6 @@ gsap.registerPlugin(ScrollTrigger);
 import store from "@/store";
 import emitter from "@/services/emitter";
 import { LOADER } from "@/constants";
-//import isEqual from "lodash/isEqual";
 
 const roundPercent = Symbol("roundPercent");
 
