@@ -9,11 +9,11 @@
         >
             <component :is="modalComponent" :data="modalData" @close="close" />
         </div>
-        <div
+        <!-- <div
             class="backdrop"
             :class="{ 'is-open': isReady }"
             @click="close"
-        ></div>
+        ></div> -->
     </Teleport>
 </template>
 

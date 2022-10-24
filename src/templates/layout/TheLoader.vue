@@ -76,8 +76,8 @@ export default defineComponent({
                     duration: LOADER.firstLoad,
                     //"--crop-path-bottom-left": "0%",
                     //"--crop-path-bottom-right": "0%",
-                    "--blur-height": "30vh",
-                    "--blur-width": "30vh",
+                    "--blur-height": "50vh",
+                    "--blur-width": "50vh",
                     "--bg-opacity": 0,
                 },
                 "start"
@@ -105,9 +105,9 @@ export default defineComponent({
                 //"--crop-path-top-left": "0%",
                 //"--crop-path-top-right": "0%",
 
-                "--blur-height": "30vh",
-                "--blur-width": "30vh",
-                "--bg-opacity": 0,
+                "--blur-height": "50vh",
+                "--blur-width": "50vh",
+                //"--bg-opacity": 0,
 
                 onComplete: () => {
                     // Dispatch load start and load end after `coverDelay` for minimum animation time
@@ -171,8 +171,8 @@ export default defineComponent({
     --crop-path-bottom-left: 100%;
     --crop-path-bottom-right: 100%;
 
-    --blur-height: 300vh;
-    --blur-width: 300vh;
+    --blur-height: 10vh;
+    --blur-width: 10vh;
     --bg-opacity: 1;
     --loader-color: var(--color-green);
     z-index: -100; // Avoid having the loader displayed on every hotReload
@@ -232,7 +232,7 @@ export default defineComponent({
         background-color: var(--color-orange);
         overflow: hidden;
         will-change: filter;
-        @include blur(50px);
+        @include blur(20px);
     }
 }
 </style>
