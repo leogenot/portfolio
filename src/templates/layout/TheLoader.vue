@@ -219,7 +219,7 @@ export default defineComponent({
         position: absolute;
         width: var(--blur-width);
         height: var(--blur-height);
-        overflow: hidden;
+        //overflow: hidden;
         @include min(md) {
             //--blur-width: 30vh;
             //--blur-height: 30vh;
