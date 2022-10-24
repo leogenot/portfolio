@@ -117,8 +117,6 @@ gsap.registerPlugin(ScrollTrigger);
 import TagItem from "@/templates/components/_shared/TagItem.vue";
 
 import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
-import gsap from "gsap/gsap-core";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default defineComponent({
     components: {
