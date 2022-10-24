@@ -112,8 +112,7 @@ import {
     onBeforeUnmount,
     nextTick,
 } from "vue";
-import { gsap, ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+
 import TagItem from "@/templates/components/_shared/TagItem.vue";
 
 import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
@@ -123,13 +122,7 @@ export default defineComponent({
         TagItem,
         ButtonPrimary,
     },
-    setup() {
-        onMounted(() => {
-            ScrollTrigger.refresh();
-        });
-
-        return {};
-    },
+    setup() {},
 });
 </script>
 
