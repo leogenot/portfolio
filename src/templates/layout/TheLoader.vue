@@ -171,8 +171,8 @@ export default defineComponent({
     --crop-path-bottom-left: 100%;
     --crop-path-bottom-right: 100%;
 
-    --blur-height: 100%;
-    --blur-width: 100%;
+    --blur-height: 300vh;
+    --blur-width: 300vh;
     --bg-opacity: 1;
     --loader-color: var(--color-green);
     z-index: -100; // Avoid having the loader displayed on every hotReload
@@ -219,6 +219,7 @@ export default defineComponent({
         position: absolute;
         width: var(--blur-width);
         height: var(--blur-height);
+        overflow: hidden;
         @include min(md) {
             //--blur-width: 30vh;
             //--blur-height: 30vh;
