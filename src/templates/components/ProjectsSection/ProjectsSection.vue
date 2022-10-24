@@ -87,7 +87,7 @@ export default defineComponent({
                 description:
                     "Web tool to generate random sketches using tensorflowjs (adapted from python to work as a standalone web page).",
                 cover: {
-                    url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+                    url: "/static/images/generative_deep_learning/1.png",
                 },
                 tags: [
                     {
@@ -115,7 +115,7 @@ export default defineComponent({
                 description:
                     "Web tool to help customer and advisors see the benefits of loan insurances.",
                 cover: {
-                    url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+                    url: "/static/images/bnp/1.png",
                 },
                 tags: [
                     {
@@ -139,7 +139,7 @@ export default defineComponent({
                 description:
                     "Help student stay organized when working from home or not, centralize all their favorite school apps",
                 cover: {
-                    url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+                    url: "/static/images/studimac/1.jpg",
                 },
                 tags: [
                     {
@@ -158,7 +158,7 @@ export default defineComponent({
                 title: "VisuTerre",
                 description: "3D terrain visualizer made in OpenGL and C++",
                 cover: {
-                    url: "https://images.unsplash.com/photo-1665687002482-8bcc38faceba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+                    url: "/static/images/visuterre/1.png",
                 },
                 tags: [
                     {
