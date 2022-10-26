@@ -13,13 +13,6 @@
                         :key="`project-${i}`"
                         :project="project"
                     />
-                    <!-- <div class="mobile">
-                        <card-project-mobile
-                            v-for="(project, i) in projects"
-                            :key="`project-${i}`"
-                            :project="project"
-                        />
-                    </div> -->
                 </div>
                 <div class="c-project-right">
                     <h4 class="c-project-right-work">My work</h4>
@@ -63,7 +56,7 @@ export default defineComponent({
                 description:
                     "Website made during my internship at MamboMambo. In collaboration with Aurélien Vigne. Animation first website using GSAP.",
                 cover: {
-                    url: "/static/images/sagacia/0.png",
+                    url: "/src/assets/images/sagacia/0.png",
                 },
                 tags: [
                     {
@@ -72,9 +65,9 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/static/images/sagacia/1.png",
-                    2: "/static/images/sagacia/2.png",
-                    3: "/static/images/sagacia/3.png",
+                    1: "/src/assets/images/sagacia/1.png",
+                    2: "/src/assets/images/sagacia/2.png",
+                    3: "/src/assets/images/sagacia/3.png",
                 },
 
                 link: {
@@ -87,7 +80,7 @@ export default defineComponent({
                 description:
                     "Web tool to generate random sketches using tensorflowjs (adapted from python to work as a standalone web page).",
                 cover: {
-                    url: "/static/images/generative_deep_learning/1.png",
+                    url: "/src/assets/images/generative_deep_learning/1.png",
                 },
                 tags: [
                     {
@@ -100,10 +93,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/static/images/generative_deep_learning/1.png",
-                    2: "/static/images/generative_deep_learning/2.png",
-                    3: "/static/images/generative_deep_learning/3.png",
-                    4: "/static/images/generative_deep_learning/sample_6500.png",
+                    1: "/src/assets/images/generative_deep_learning/1.png",
+                    2: "/src/assets/images/generative_deep_learning/2.png",
+                    3: "/src/assets/images/generative_deep_learning/3.png",
+                    4: "/src/assets/images/generative_deep_learning/sample_6500.png",
                 },
                 link: {
                     url: "https://leogenot.github.io/DeepDrawing/",
@@ -115,7 +108,7 @@ export default defineComponent({
                 description:
                     "Web tool to help customer and advisors see the benefits of loan insurances.",
                 cover: {
-                    url: "/static/images/bnp/1.png",
+                    url: "/src/assets/images/bnp/1.png",
                 },
                 tags: [
                     {
@@ -128,10 +121,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/static/images/bnp/1.png",
-                    2: "/static/images/bnp/2.png",
-                    3: "/static/images/bnp/3.png",
-                    4: "/static/images/bnp/4.png",
+                    1: "/src/assets/images/bnp/1.png",
+                    2: "/src/assets/images/bnp/2.png",
+                    3: "/src/assets/images/bnp/3.png",
+                    4: "/src/assets/images/bnp/4.png",
                 },
             },
             project5: {
@@ -139,7 +132,7 @@ export default defineComponent({
                 description:
                     "Help student stay organized when working from home or not, centralize all their favorite school apps",
                 cover: {
-                    url: "/static/images/studimac/1.jpg",
+                    url: "/src/assets/images/studimac/1.jpg",
                 },
                 tags: [
                     {
@@ -148,17 +141,17 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/static/images/studimac/1.jpg",
-                    2: "/static/images/studimac/2.jpg",
-                    3: "/static/images/studimac/3.jpg",
-                    4: "/static/images/studimac/4.png",
+                    1: "/src/assets/images/studimac/1.jpg",
+                    2: "/src/assets/images/studimac/2.jpg",
+                    3: "/src/assets/images/studimac/3.jpg",
+                    4: "/src/assets/images/studimac/4.png",
                 },
             },
             project6: {
                 title: "VisuTerre",
                 description: "3D terrain visualizer made in OpenGL and C++",
                 cover: {
-                    url: "/static/images/visuterre/1.png",
+                    url: "/src/assets/images/visuterre/1.png",
                 },
                 tags: [
                     {
@@ -167,10 +160,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/static/images/visuterre/1.png",
-                    2: "/static/images/visuterre/2.png",
-                    3: "/static/images/visuterre/3.png",
-                    4: "/static/images/visuterre/4.png",
+                    1: "/src/assets/images/visuterre/1.png",
+                    2: "/src/assets/images/visuterre/2.png",
+                    3: "/src/assets/images/visuterre/3.png",
+                    4: "/src/assets/images/visuterre/4.png",
                 },
             },
         });

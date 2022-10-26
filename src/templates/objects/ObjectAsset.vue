@@ -1,5 +1,11 @@
 <template>
-    <picture v-if="specImg" :key="specImg" class="o-asset" :class="classesImg" :style="stylesImg">
+    <picture
+        v-if="specImg"
+        :key="specImg"
+        class="o-asset"
+        :class="classesImg"
+        :style="stylesImg"
+    >
         <source
             v-if="webpImg"
             type="image/webp"
@@ -19,7 +25,7 @@
             :alt="titleImg ? titleImg : specImg.title"
             :data-sizes="isLazyLoad ? 'auto' : null"
             :data-src="isLazyLoad ? specImg.url : null"
-            :src="isLazyLoad ? '/static/images/blank.gif' : null"
+            :src="isLazyLoad ? '/src/assets/images/blank.gif' : null"
             :width="specImg.width"
             :height="specImg.height"
             @load="loaded()"
@@ -113,16 +119,25 @@ export default defineComponent({
 
             // Webp format
             if (props.webp) {
-                webpImg.value = Array.isArray(props.webp) && props.webp.length > 0 ? props.webp[0] : props.webp;
+                webpImg.value =
+                    Array.isArray(props.webp) && props.webp.length > 0
+                        ? props.webp[0]
+                        : props.webp;
             }
         }
 
         function setRatio() {
-            if (!specImg.value || !specImg.value.width || !specImg.value.height) {
+            if (
+                !specImg.value ||
+                !specImg.value.width ||
+                !specImg.value.height
+            ) {
                 ratioImg.value = 0;
                 return;
             }
-            ratioImg.value = (specImg.value.width / specImg.value.height).toFixed(3);
+            ratioImg.value = (
+                specImg.value.width / specImg.value.height
+            ).toFixed(3);
         }
 
         function setStyles() {
