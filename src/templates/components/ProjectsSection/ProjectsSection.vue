@@ -56,7 +56,7 @@ export default defineComponent({
                 description:
                     "Website made during my internship at MamboMambo. In collaboration with Aurélien Vigne. Animation first website using GSAP.",
                 cover: {
-                    url: "/src/assets/images/sagacia/0.png",
+                    url: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/sagacia/0.png",
                 },
                 tags: [
                     {
@@ -65,9 +65,9 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/src/assets/images/sagacia/1.png",
-                    2: "/src/assets/images/sagacia/2.png",
-                    3: "/src/assets/images/sagacia/3.png",
+                    1: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/sagacia/1.png",
+                    2: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/sagacia/2.png",
+                    3: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/sagacia/3.png",
                 },
 
                 link: {
@@ -80,7 +80,7 @@ export default defineComponent({
                 description:
                     "Web tool to generate random sketches using tensorflowjs (adapted from python to work as a standalone web page).",
                 cover: {
-                    url: "/src/assets/images/generative_deep_learning/1.png",
+                    url: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/generative_deep_learning/1.png",
                 },
                 tags: [
                     {
@@ -93,10 +93,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/src/assets/images/generative_deep_learning/1.png",
-                    2: "/src/assets/images/generative_deep_learning/2.png",
-                    3: "/src/assets/images/generative_deep_learning/3.png",
-                    4: "/src/assets/images/generative_deep_learning/sample_6500.png",
+                    1: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/generative_deep_learning/1.png",
+                    2: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/generative_deep_learning/2.png",
+                    3: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/generative_deep_learning/3.png",
+                    4: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/generative_deep_learning/sample_6500.png",
                 },
                 link: {
                     url: "https://leogenot.github.io/DeepDrawing/",
@@ -108,7 +108,7 @@ export default defineComponent({
                 description:
                     "Web tool to help customer and advisors see the benefits of loan insurances.",
                 cover: {
-                    url: "/src/assets/images/bnp/1.png",
+                    url: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/bnp/1.png",
                 },
                 tags: [
                     {
@@ -121,10 +121,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/src/assets/images/bnp/1.png",
-                    2: "/src/assets/images/bnp/2.png",
-                    3: "/src/assets/images/bnp/3.png",
-                    4: "/src/assets/images/bnp/4.png",
+                    1: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/bnp/1.png",
+                    2: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/bnp/2.png",
+                    3: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/bnp/3.png",
+                    4: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/bnp/4.png",
                 },
             },
             project5: {
@@ -132,7 +132,7 @@ export default defineComponent({
                 description:
                     "Help student stay organized when working from home or not, centralize all their favorite school apps",
                 cover: {
-                    url: "/src/assets/images/studimac/1.jpg",
+                    url: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/studimac/1.jpg",
                 },
                 tags: [
                     {
@@ -141,17 +141,17 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/src/assets/images/studimac/1.jpg",
-                    2: "/src/assets/images/studimac/2.jpg",
-                    3: "/src/assets/images/studimac/3.jpg",
-                    4: "/src/assets/images/studimac/4.png",
+                    1: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/studimac/1.jpg",
+                    2: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/studimac/2.jpg",
+                    3: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/studimac/3.jpg",
+                    4: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/studimac/4.jpg",
                 },
             },
             project6: {
                 title: "VisuTerre",
                 description: "3D terrain visualizer made in OpenGL and C++",
                 cover: {
-                    url: "/src/assets/images/visuterre/1.png",
+                    url: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/visuterre/1.png",
                 },
                 tags: [
                     {
@@ -160,10 +160,10 @@ export default defineComponent({
                     },
                 ],
                 images: {
-                    1: "/src/assets/images/visuterre/1.png",
-                    2: "/src/assets/images/visuterre/2.png",
-                    3: "/src/assets/images/visuterre/3.png",
-                    4: "/src/assets/images/visuterre/4.png",
+                    1: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/visuterre/1.png",
+                    2: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/visuterre/2.png",
+                    3: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/visuterre/3.png",
+                    4: "https://github.com/leogenot/leogenot.github.io/blob/main/static/images/visuterre/4.png",
                 },
             },
         });
