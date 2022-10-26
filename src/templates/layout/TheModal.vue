@@ -95,7 +95,7 @@ export default defineComponent({
     justify-content: space-between;
 
     overflow-y: auto;
-    //overflow-x: hidden;
+    overflow-x: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 1s $custom-ease;
 
