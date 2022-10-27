@@ -134,7 +134,7 @@ export default defineComponent({
     @include min(md) {
         padding: 100px 5% 40px;
     }
-    overflow: hidden;
+    //overflow: hidden;
 
     &__blur {
         position: absolute;

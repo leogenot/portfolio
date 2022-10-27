@@ -187,6 +187,7 @@ export default defineComponent({
         onMounted(() => {
             window.addEventListener("resize", onResize);
             window.addEventListener("scroll", onScroll);
+            refreshScrollTrigger();
         });
         onBeforeUnmount(() => {
             window.removeEventListener("resize", onResize);
