@@ -112,6 +112,8 @@ import {
     onBeforeUnmount,
     nextTick,
 } from "vue";
+import { gsap, ScrollTrigger, ScrollSmoother } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 import TagItem from "@/templates/components/_shared/TagItem.vue";
 
@@ -122,7 +124,11 @@ export default defineComponent({
         TagItem,
         ButtonPrimary,
     },
-    setup() {},
+    setup() {
+        onMounted(() => {
+            ScrollTrigger.refresh();
+        });
+    },
 });
 </script>
 
@@ -134,7 +140,7 @@ export default defineComponent({
     @include min(md) {
         padding: 100px 5% 40px;
     }
-    //overflow: hidden;
+    overflow-x: hidden;
 
     &__blur {
         position: absolute;
