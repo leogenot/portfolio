@@ -16,5 +16,5 @@ yarn run serve
 ```
 yarn run build
 ```
-# [Download my resume](https://link-url-here.org)
+# [Download my resume](https://github.com/leogenot/leogenot.github.io/blob/main/static/CV_en.pdf)
 
