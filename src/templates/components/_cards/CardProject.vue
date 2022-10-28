@@ -183,6 +183,7 @@ export default defineComponent({
             @include min(md) {
                 font-size: var(--fs-xl);
             }
+            cursor: default;
 
             &.-nocurrent {
                 z-index: 0;
@@ -192,32 +193,6 @@ export default defineComponent({
             }
         }
         &-image {
-            /*display: flex;
-            overflow: hidden;
-            margin: 12px 0 20px;
-            width: 100%;
-            height: 290px;
-            overflow: hidden;
-            @include min(md) {
-                width: calc(100px + (100% - 150px) / 7 * 5);
-                height: 0;
-            }
-
-            &-img {
-                object-fit: cover;
-                width: calc(100vw - var(--layout-horizontal-padding) * 2);
-                height: 110%;
-                object-position: left;
-
-                @include min(md) {
-                    width: 100%;
-                    height: calc(
-                        (110vw - var(--full-screen-gutters)) / 2.4 * 0.8
-                    );
-                    object-position: initial;
-                }
-            }*/
-
             position: absolute;
             width: 300px;
             height: auto;
