@@ -4,10 +4,8 @@ export const STORE_MODULES = Object.freeze([
     "global",
     "loader",
     "modal",
-    "navigations",
     "scroll",
     "userContext",
-    "animations"
 ]);
 
 export const MODAL_COMPONENTS = Object.freeze({ Project: "ProjectModal" });

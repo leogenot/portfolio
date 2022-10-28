@@ -23,18 +23,7 @@
 </template>
 
 <script>
-import {
-    defineComponent,
-    computed,
-    ref,
-    onMounted,
-    onBeforeUnmount,
-    watch,
-    nextTick,
-} from "vue";
-import { useStore } from "vuex";
-import { gsap, ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+import { defineComponent, computed, ref } from "vue";
 
 import ListTag from "@/templates/components/ListTag.vue";
 import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
@@ -183,7 +172,6 @@ export default defineComponent({
 
 <style lang="scss">
 .c-projects {
-    //height: -webkit-fill-available;
     padding: 0px 5% 40px;
     @include min(md) {
         padding: 100px 5% 40px;

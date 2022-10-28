@@ -6,15 +6,7 @@
 </template>
 
 <script>
-import {
-    defineComponent,
-    computed,
-    ref,
-    onMounted,
-    onBeforeUnmount,
-} from "vue";
-import { gsap, ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+import { defineComponent, computed, ref } from "vue";
 
 import HeroHeader from "@/templates/components/Hero/HeroHeader.vue";
 import ListTag from "@/templates/components/ListTag.vue";

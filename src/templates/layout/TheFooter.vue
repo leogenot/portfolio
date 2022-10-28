@@ -1,17 +1,9 @@
 <template>
-    <!-- <div class="l-footer | l-container -full">
-        <div class="l-footer__tagline">
-            <headline text="Let's keep" :min="1" :max="999" />
-        </div>
-    </div> -->
     <footer class="l-footer l-footer-container">
         <div class="l-footer-slogan">
             <p>
                 Let's keep
                 <span class="about__container-contact-link">
-                    <!-- <a href="mailto:leogenot@gmail.com" target="_blank"
-                        >in touch.</a
-                    > -->
                     <button-primary
                         tag="a"
                         label="in touch"
@@ -65,13 +57,11 @@
 import { defineComponent, computed } from "vue";
 
 import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
-import Headline from "@/templates/components/_shared/Headline.vue";
 
 export default defineComponent({
     name: "TheFooter",
     components: {
         ButtonPrimary,
-        Headline,
     },
     setup() {},
 });

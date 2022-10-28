@@ -5,7 +5,6 @@
         :style="`--app-height: ${appHeight}px;`"
     >
         <the-loader></the-loader>
-        <!-- <the-header></the-header> -->
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
@@ -36,7 +35,6 @@ import { gsap, ScrollTrigger, ScrollSmoother } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 import TheLoader from "@/templates/layout/TheLoader.vue";
-import TheHeader from "@/templates/layout/TheHeader.vue";
 import TheContent from "@/templates/layout/TheContent.vue";
 import TheFooter from "@/templates/layout/TheFooter.vue";
 import TheModal from "@/templates/layout/TheModal.vue";
@@ -45,7 +43,6 @@ export default defineComponent({
     name: "TheBase",
     components: {
         TheLoader,
-        TheHeader,
         TheContent,
         TheFooter,
         TheModal,
@@ -59,9 +56,6 @@ export default defineComponent({
         const isLoading = computed(() => store.getters["loader/isLoading"]);
         const isScrollDisabled = computed(
             () => store.state.scroll.isScrollDisabled
-        );
-        const refreshCount = computed(
-            () => store.state.animations.refreshCount
         );
 
         const globalUserContext = computed(
@@ -105,8 +99,8 @@ export default defineComponent({
                     content: "#smooth-content",
                     smooth: 2, // seconds it takes to "catch up" to native scroll position
                     effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
-                    normalizeScroll: false, //Bug returns when this is set to true
                     ignoreMobileResize: true,
+                    normalizeScroll: false,
                     onUpdate: (self) => {
                         checkIfUserScrollTop(
                             self?.scrollTrigger?.progress < 0.01
@@ -114,7 +108,7 @@ export default defineComponent({
                     },
                 });
 
-                //store.dispatch("scroll/toggleScrollReady", true);
+                store.dispatch("scroll/toggleScrollReady", true);
             });
         }
 
@@ -208,12 +202,9 @@ export default defineComponent({
             }
         );
 
-        watch(
-            () => refreshCount.value,
-            () => {
-                refreshScrollTrigger();
-            }
-        );
+        watch(() => {
+            refreshScrollTrigger();
+        });
 
         return {
             isLoading,

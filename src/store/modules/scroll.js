@@ -23,7 +23,6 @@ const getters = {
 // Actions
 const actions = {
     toggleDisabledScroll(store, bool) {
-        console.log("toggleDisabledScroll::", bool);
         store.commit("updateDisabledScroll", bool);
     },
     toggleScrollReady(store, bool) {
