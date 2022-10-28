@@ -64,8 +64,7 @@ export default defineComponent({
                         label: "DEV",
                     },
                 ],
-                
-                
+
                 images: {
                     1: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/sagacia/1.png",
                     2: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/sagacia/2.png",
@@ -174,52 +173,9 @@ export default defineComponent({
             return Object.keys(projects.value).length;
         });
 
-        ////////////////////////////////
-        //       START IMAGE TIMELINE
-        ////////////////////////////////
-        const imageContainer = ref();
-
-        const imageAnimationTimeline = gsap.timeline({
-            paused: true,
-        });
-
-        function initImageTimeline() {
-            imageAnimationTimeline.to(imageContainer.value, {
-                "--crop-path-btm-left": "100%",
-                "--crop-path-btm-right": "100%",
-                duration: 1,
-                ease: "customEase",
-            });
-
-            //imageAnimationTimeline.play();
-        }
-
-        function playAnimation() {
-            imageAnimationTimeline.play();
-        }
-        function stopAnimation() {
-            imageAnimationTimeline.reverse();
-        }
-        ////////////////////////////////
-        //       END IMAGE TIMELINE
-        ////////////////////////////////
-
-        onMounted(() => {
-            initImageTimeline();
-        });
-
-        onBeforeUnmount(() => {
-            imageAnimationTimeline ? imageAnimationTimeline.kill() : null;
-        });
-
         return {
             projects,
             count_projects,
-            imageContainer,
-            imageAnimationTimeline,
-            initImageTimeline,
-            playAnimation,
-            stopAnimation,
         };
     },
 });
