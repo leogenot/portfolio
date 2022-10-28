@@ -193,23 +193,43 @@ export default defineComponent({
             }
         }
         &-image {
-            position: absolute;
-            width: 300px;
-            height: auto;
-            object-fit: cover;
-            transform: translateX(-50%) translateY(-50%);
-            top: 50%;
-            left: 50%;
-            z-index: 1;
-            opacity: 0;
-            visibily: hidden;
-            pointer-events: none;
+            display: flex;
+            overflow: hidden;
+            margin: 12px 0 20px;
+            width: 100%;
+            height: 290px;
+            overflow: hidden;
+            @include min(md) {
+                position: absolute;
+                width: 300px;
+                height: auto;
+                object-fit: cover;
+                transform: translateX(-50%) translateY(-50%);
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                opacity: 0;
+                visibily: hidden;
+                pointer-events: none;
+            }
 
             &-img {
-                object-fit: cover;
+                /*object-fit: cover;
                 width: 100%;
                 height: 100%;
+                object-position: left;*/
+                object-fit: cover;
+                width: calc(100vw - var(--layout-horizontal-padding) * 2);
+                height: 110%;
                 object-position: left;
+
+                @include min(md) {
+                    width: 100%;
+                    height: calc(
+                        (110vw - var(--full-screen-gutters)) / 2.4 * 0.8
+                    );
+                    object-position: initial;
+                }
             }
 
             &-tags {
