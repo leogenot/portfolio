@@ -7,9 +7,7 @@
         "serve": "vite preview",
         "build-dev": "vite build --mode development",
         "build": "vite build",
-        "lint": "vite lint",
-        "predeploy": "yarn run build",
-        "deploy": "gh-pages -d dist"
+        "lint": "vite lint"
     },
     "dependencies": {
         "@types/faker": "^5.1.2",

@@ -45,62 +45,7 @@
                     </p>
                 </div>
             </div>
-            <div class="c-hero-header__more-bottomrow">
-                <div class="c-hero-header__more-bottomrow-left">
-                    <button-primary
-                        label=""
-                        :iconBefore="'scroll-down'"
-                        class="c-hero-header__btn arrow"
-                    />
-                </div>
-                <div class="c-hero-header__more-bottomrow-middle">
-                    <button-primary
-                        label="Github"
-                        color="light"
-                        :iconAfter="'external'"
-                        class="c-hero-header__btn"
-                        href="https://www.github.com/leogenot"
-                        target="_blank"
-                        tag="a"
-                    />
-                    <button-primary
-                        label="Instagram"
-                        color="light"
-                        :iconAfter="'external'"
-                        class="c-hero-header__btn"
-                        href="https://www.instagram.com/leogenot"
-                        target="_blank"
-                        tag="a"
-                    />
-                    <button-primary
-                        label="Youtube"
-                        color="light"
-                        :iconAfter="'external'"
-                        class="c-hero-header__btn"
-                        href="https://www.youtube.com/channel/UCTy2DFV4djNni5fskteT16Q"
-                        target="_blank"
-                        tag="a"
-                    />
-                    <button-primary
-                        label="LinkedIn"
-                        color="light"
-                        :iconAfter="'external'"
-                        class="c-hero-header__btn"
-                        href="https://www.linkedin.com/in/leo-genot-88580b176/"
-                        target="_blank"
-                        tag="a"
-                    />
-                </div>
-                <div class="c-hero-header__more-bottomrow-right">
-                    <button-primary
-                        label="email"
-                        color="light"
-                        class="c-hero-header__btn email"
-                        href="mailto:leogenot@gmail.com"
-                        tag="a"
-                    />
-                </div>
-            </div>
+            <div class="c-hero-header__more-bottomrow"><list-btn /></div>
         </div>
     </section>
 </template>
@@ -118,11 +63,13 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 import TagItem from "@/templates/components/_shared/TagItem.vue";
 
 import ButtonPrimary from "@/templates/components/_buttons/ButtonPrimary.vue";
+import ListBtn from "@/templates/components/ListBtn.vue";
 
 export default defineComponent({
     components: {
         TagItem,
         ButtonPrimary,
+        ListBtn,
     },
     setup() {
         onMounted(() => {
@@ -268,59 +215,6 @@ export default defineComponent({
                 }
             }
             &-right {
-            }
-        }
-        &-bottomrow {
-            display: flex;
-
-            justify-content: space-between;
-            flex-flow: row wrap;
-            @include min(md) {
-                flex-flow: row nowrap;
-            }
-            &-left {
-                @include min(md) {
-                    text-align: center;
-                    height: fit-content;
-                }
-            }
-            &-middle {
-                @include min(md) {
-                    text-align: center;
-                    height: fit-content;
-                }
-            }
-            &-right {
-                @include min(md) {
-                    text-align: center;
-                    height: fit-content;
-                }
-            }
-        }
-    }
-
-    &__btn {
-        &.arrow {
-            --btn-border-color: transparent;
-            --btn-hover-display: none;
-            cursor: default;
-            margin-bottom: 5rem;
-        }
-
-        @include max(md) {
-            &:not(.arrow) {
-                --btn-txt-size: var(--fs-xsmall);
-                margin: 0.5rem;
-            }
-            &.email {
-                margin-top: 3rem;
-            }
-        }
-        @include min(md) {
-            &:not(.arrow),
-            &:not(.email) {
-                margin-right: 1.5rem;
-                margin-bottom: 1.5rem;
             }
         }
     }
