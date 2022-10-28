@@ -96,17 +96,12 @@ export default defineComponent({
 
         function initImageTimeline() {
             imageAnimationTimeline.to(imageContainer.value, {
-                //"--crop-path-btm-left": "100%",
-                //"--crop-path-btm-right": "100%",
                 height: "calc((100vw - var(--full-screen-gutters)) / 2.4 * 0.65)",
                 duration: 1,
                 ease: "Expo.easeOut",
                 onComplete: () => ScrollTrigger.refresh(),
                 onUpdate: () => ScrollTrigger.refresh(),
-                //onStart: () => ScrollTrigger.refresh(),
             });
-
-            //imageAnimationTimeline.play();
         }
 
         function playAnimation() {
