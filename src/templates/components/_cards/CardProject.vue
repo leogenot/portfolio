@@ -6,7 +6,13 @@
         @click="openModal(project)"
     >
         <div class="c-card-project-project">
-            <h4 class="c-card-project-project-title">{{ project.title }}</h4>
+            <h4
+                class="c-card-project-project-title"
+                :class="className"
+                ref="title"
+            >
+                {{ project.title }}
+            </h4>
             <div class="c-card-project-project-image" ref="imageContainer">
                 <img
                     data-speed="auto"
@@ -89,40 +95,62 @@ export default defineComponent({
         ////////////////////////////////
 
         const imageContainer = ref();
+        const title = ref();
 
         const imageAnimationTimeline = gsap.timeline({
             paused: true,
         });
 
         function initImageTimeline() {
-            imageAnimationTimeline.to(imageContainer.value, {
-                height: "calc((100vw - var(--full-screen-gutters)) / 2.4 * 0.65)",
+            /* imageAnimationTimeline.to(imageContainer.value, {
+                //height: "calc((100vw - var(--full-screen-gutters)) / 2.4 * 0.65)",
+                autoAlpha: 1,
                 duration: 1,
                 ease: "Expo.easeOut",
                 onComplete: () => ScrollTrigger.refresh(),
                 onUpdate: () => ScrollTrigger.refresh(),
-            });
+            }); */
         }
 
+        const isCurrentlyHovered = ref(false);
+
         function playAnimation() {
+            isCurrentlyHovered.value = true;
             imageAnimationTimeline.play();
             ScrollTrigger.refresh();
         }
         function stopAnimation() {
+            isCurrentlyHovered.value = false;
             imageAnimationTimeline.reverse();
             ScrollTrigger.refresh();
         }
+
         ////////////////////////////////
         //       END IMAGE TIMELINE
         ////////////////////////////////
 
+        const className = computed(() => [
+            "c-card-project-project-title",
+            isCurrentlyHovered.value ? "-current" : "-nocurrent",
+        ]);
+
         onMounted(() => {
-            initImageTimeline();
+            title.value.addEventListener("mouseenter", (e) => {
+                gsap.to(imageContainer.value, { autoAlpha: 1 });
+            });
+
+            title.value.addEventListener("mouseleave", (e) => {
+                gsap.to(imageContainer.value, { autoAlpha: 0 });
+            });
+            title.value.addEventListener("mousemove", (e) => {
+                gsap.set(imageContainer.value, { x: e.offsetX - 300 });
+            });
+            //initImageTimeline();
             ScrollTrigger.refresh();
         });
 
         onBeforeUnmount(() => {
-            imageAnimationTimeline ? imageAnimationTimeline.kill() : null;
+            //imageAnimationTimeline ? imageAnimationTimeline.kill() : null;
         });
 
         return {
@@ -132,6 +160,8 @@ export default defineComponent({
             imageAnimationTimeline,
             playAnimation,
             stopAnimation,
+            title,
+            className,
         };
     },
 });
@@ -153,9 +183,16 @@ export default defineComponent({
             @include min(md) {
                 font-size: var(--fs-xl);
             }
+
+            &.-nocurrent {
+                z-index: 0;
+            }
+            &.-current {
+                z-index: 2;
+            }
         }
         &-image {
-            display: flex;
+            /*display: flex;
             overflow: hidden;
             margin: 12px 0 20px;
             width: 100%;
@@ -179,7 +216,27 @@ export default defineComponent({
                     );
                     object-position: initial;
                 }
+            }*/
+
+            position: absolute;
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            transform: translateX(-50%) translateY(-50%);
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            opacity: 0;
+            visibily: hidden;
+            pointer-events: none;
+
+            &-img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                object-position: left;
             }
+
             &-tags {
                 position: absolute;
                 bottom: 1rem;
