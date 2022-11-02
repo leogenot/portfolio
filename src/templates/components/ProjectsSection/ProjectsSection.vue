@@ -64,6 +64,7 @@ export default defineComponent({
                     url: "https://mambomambo.ca",
                     label: "Visit MamboMambo",
                 },
+                year: 2022,
             },
             project2: {
                 title: "Deep Drawing",
@@ -92,6 +93,7 @@ export default defineComponent({
                     url: "https://leogenot.github.io/DeepDrawing/",
                     label: "Try it out",
                 },
+                year: 2022,
             },
             project4: {
                 title: "BNP",
@@ -116,6 +118,7 @@ export default defineComponent({
                     3: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/bnp/3.png",
                     4: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/bnp/4.png",
                 },
+                year: 2020,
             },
             project5: {
                 title: "Studimac",
@@ -136,6 +139,7 @@ export default defineComponent({
                     3: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/studimac/3.jpg",
                     4: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/studimac/4.jpg",
                 },
+                year: 2021,
             },
             project6: {
                 title: "VisuTerre",
@@ -155,6 +159,7 @@ export default defineComponent({
                     3: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/visuterre/3.png",
                     4: "https://raw.githubusercontent.com/leogenot/leogenot.github.io/main/static/images/visuterre/4.png",
                 },
+                year: 2021,
             },
         });
 

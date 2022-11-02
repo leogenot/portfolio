@@ -1,17 +1,4 @@
 <template>
-    <!--     <div
-        class="c-project-modal | l-grid"
-        :class="{ 'c-project-modal--active': isOpen }"
-    >
-        <button-primary
-            class="c-project-modal-btn"
-            label="Go back"
-            color="light"
-            iconAfter="close"
-            @click="close"
-        />
-        {{ data.title }}
-    </div> -->
 
     <div
         class="c-project-modal | l-container"
@@ -21,7 +8,6 @@
             <h2 class="c-project-modal__header-title">
                 {{ data.title }}
             </h2>
-            <!-- <button class="c-project-modal__close__dk9kP">Close</button> -->
             <button-primary
                 class="c-project-modal-btn"
                 label="Close"
@@ -57,7 +43,7 @@
                             class="c-project-modal__content-infos-description-year"
                         >
                             <span>Year</span>
-                            <span>2020</span>
+                            <span>{{data.year}}</span>
                         </div>
                     </div>
                 </div>
