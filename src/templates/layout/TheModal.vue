@@ -91,15 +91,15 @@ export default defineComponent({
 
     overflow-y: auto;
     overflow-x: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 1s $custom-ease;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 2s $custom-ease;
 
     width: 100%;
     height: 100%;
 
     &.is-open {
         //opacity: 1;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: circle(100% at 50% 50%);
         pointer-events: auto;
     }
 }

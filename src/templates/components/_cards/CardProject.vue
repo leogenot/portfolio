@@ -209,7 +209,7 @@ export default defineComponent({
                 left: 50%;
                 z-index: 1;
                 opacity: 0;
-                visibily: hidden;
+                visibility: hidden;
                 pointer-events: none;
             }
 
